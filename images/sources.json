@@ -1,0 +1,722 @@
+[
+  {
+    "number": 1,
+    "name_he": "סמאשבורגר על הפלנצ'ה",
+    "original_dish": "סמאשבורגר",
+    "restaurant": "hamosad",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/hamosad",
+    "image_url": "https://imageproxy.wolt.com/assets/6a7dad0377cd4c8a68cc4f1e",
+    "menu_description": "קציצת סמאשש כפולה שנטחנות כל בוקר מנתחים מובחרים בלחמנייה עם אורוגולה, מיונז, צ'דר אנגלי, חמוצים שלנו, בצל צרוב וריבת הוואי מנגו צ'ילי 🌶️ פיקנטי"
+  },
+  {
+    "number": 2,
+    "name_he": "המבורגר איטלקי מפנק",
+    "original_dish": "המבורגר האיטלקי",
+    "restaurant": "hamosad",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/hamosad",
+    "image_url": "https://imageproxy.wolt.com/assets/6a21547e9205260330d031b4",
+    "menu_description": "קציצת בקר עסיסית  שנטחנת כל בוקר מנתחים מובחרים בלחמנייה רכה עם מיונז, אורוגולה, ריבת שרי, גבינת מוצרלה וחמאת פסטו\nשף יוצר : אביב סולימני\n\n100% בשר בקר ישראלי מובחר מפרות הולשטיין, בלנד נתחים טריים ומיושנים שנטחנים במקום ליצירת קציצה עסיסית, עמוקה ומדויקת בטעם."
+  },
+  {
+    "number": 3,
+    "name_he": "צ'יזבורגר טבעוני",
+    "original_dish": "צ'יזבורגר טבעוני 🌱",
+    "restaurant": "hamosad",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/hamosad",
+    "image_url": "https://wolt-menu-images-cdn.wolt.com/menu-images/5bf18ad4e88d79000a325668/67c36018-39b6-11ed-821b-eecf95eb1d79_hamosad_18.9.2220107.jpeg",
+    "menu_description": "‫קציצה ביונד מיט בלחמנייה רכה עם חסה אייסברג, עגבנייה, בצל סגול, גבינת צ'דר טבעונית ומיונז טבעוני \n*חלבון אפונה וסויה"
+  },
+  {
+    "number": 4,
+    "name_he": "המבורגר כמהין צרפתי",
+    "original_dish": "LA TRUFFE | לה טרוף",
+    "restaurant": "26-hamburger-gourmet",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/26-hamburger-gourmet",
+    "image_url": "https://imageproxy.wolt.com/assets/6a295520e96e3b62fd70636b",
+    "menu_description": "בשר בקר , איולי כמהין על בסיס מיונז , חזה אווז מעושן , טוויל פרמז'ן וגפרורי בטטה קריספי (מכיל גלוטן)\nBeef burger,truffle sauce,smoked goose breast. Tiles of parmesan and crispy sweet potato"
+  },
+  {
+    "number": 5,
+    "name_he": "המבורגר רקלט נמסה",
+    "original_dish": "רקלט | Raclette",
+    "restaurant": "26-hamburger-gourmet",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/26-hamburger-gourmet",
+    "image_url": "https://wolt-menu-images-cdn.wolt.com/menu-images/72129028-eb5b-11e8-afb4-0a5864604c0b_Raclette.jpeg",
+    "menu_description": "בשר בקר, גבינת רקלט שוויצרי, עירית, רוטב ברביקיו ביתי (על בסיס מיונז) ורוקט"
+  },
+  {
+    "number": 6,
+    "name_he": "המבורגר טלה בסגנון צרפתי",
+    "original_dish": "L'agneau | טלה",
+    "restaurant": "26-hamburger-gourmet",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/26-hamburger-gourmet",
+    "image_url": "https://wolt-menu-images-cdn.wolt.com/menu-images/f3a406c6-eb5b-11e8-a79f-0a5864604c0b_L_agneau.jpeg",
+    "menu_description": "בשר טלה, צ'דר אנגלי מיושן (18 חודשים), פטריות ביין לבן, רוטב טרטר (על בסיס מיונז) ועלי רוקט"
+  },
+  {
+    "number": 7,
+    "name_he": "בורגר עוף סופר קריספי",
+    "original_dish": "קריספי בורגר",
+    "restaurant": "chickencrispy",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/chickencrispy",
+    "image_url": "https://imageproxy.wolt.com/assets/6a01d6bfab6fad61f9fce5dd",
+    "menu_description": "חזה עוף קריספי, חסה, בצל, עגבניה"
+  },
+  {
+    "number": 8,
+    "name_he": "בורגר עוף באפלו לוהט",
+    "original_dish": "בפאלו בירד 🌶️",
+    "restaurant": "chickencrispy",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/chickencrispy",
+    "image_url": "https://imageproxy.wolt.com/assets/6a01d6e033c09ab462478633",
+    "menu_description": "סטיקס ברוטב בפאלו, קולסלאו, בצל מוחמץ, מלפפון חמוץ ומיונז\n\n*לא ניתן לבצע שינויים במנה"
+  },
+  {
+    "number": 9,
+    "name_he": "בורגר צ'דר וחלפיניו",
+    "original_dish": "Cheddar Jalapeno",
+    "restaurant": "silly-kid",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/silly-kid",
+    "image_url": "https://imageproxy.wolt.com/assets/6947ded6a473d9384b50b301",
+    "menu_description": "פרגית בציפוי קריספי,  רוטב גבינת צ'דר, סלסת חלפיניו כוסברה, איולי לימוני וחסה אייסברג"
+  },
+  {
+    "number": 10,
+    "name_he": "בורגר עוף ודבש",
+    "original_dish": "Holy Honey",
+    "restaurant": "silly-kid",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/silly-kid",
+    "image_url": "https://wolt-menu-images-cdn.wolt.com/menu-images/67e99661933b7c66e8ffc0ee/5d698640-3942-11f0-a560-bad99c854350_silly_kid13057255.jpg",
+    "menu_description": "פרגית שמנמנה בציפוי קריספי ברוטב דבש וחמאה, איולי לימוני, קולסלאו ומלפפון בחומץ"
+  },
+  {
+    "number": 11,
+    "name_he": "פיתה שווארמה פרגית",
+    "original_dish": "שווארמה פרגית בפיתה (150 גרם בשר) + פינוק!",
+    "restaurant": "congress-basel",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/congress-basel",
+    "image_url": "https://imageproxy.wolt.com/assets/673f3017fb6ca60cbd8e4909",
+    "menu_description": "שווארמה של פרגית, מוגש עם פינוק מטוגן לבחירה וטחינה בצד"
+  },
+  {
+    "number": 12,
+    "name_he": "פיצה פונגי כמהין",
+    "original_dish": "פיצה פונגי כמהין",
+    "restaurant": "olio-forno",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/olio-forno",
+    "image_url": "https://imageproxy.wolt.com/assets/6a056abc5311d3f37cb3c7ad",
+    "menu_description": "רוטב לבן, מוצרלה טרייה , פטריות פורטובלו צלויות , נגיעות כמהין ופרמז'ן"
+  },
+  {
+    "number": 13,
+    "name_he": "פיצה סטרצ'טלה חריפה",
+    "original_dish": "סטרצ'טלה  מהגיהנום",
+    "restaurant": "olio-forno",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/olio-forno",
+    "image_url": "https://imageproxy.wolt.com/assets/6a056b0dcf8c9f142af466fc",
+    "menu_description": "רוטב עגבניות פיקנטי, סטרצ'טלה טרייה, צ'ילי, דבש חריף, בזיליקום ושמן זית"
+  },
+  {
+    "number": 14,
+    "name_he": "פסטת פסטו ובזיליקום",
+    "original_dish": "פסטו",
+    "restaurant": "olio-forno",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/olio-forno",
+    "image_url": "https://imageproxy.wolt.com/assets/6a0569b6cf8c9f142af466d8",
+    "menu_description": "פסטה טרייה בעבודת יד לבחירה ברוטב שמנת פסטו טרי , שמן זית , אגוז מוסקט , פרמז'ן טרי , שום ובזיליקום טרי ."
+  },
+  {
+    "number": 15,
+    "name_he": "פיצה סנטוריני עם פטה ודבש",
+    "original_dish": "פיצה סנטוריני  | Santorini pizza",
+    "restaurant": "papi-pizza",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/papi-pizza",
+    "image_url": "https://imageproxy.wolt.com/assets/694a5c7788a4d8a18718490e",
+    "menu_description": "פיצה עם רוטב גבינות, מוצרלה, פטה, דבש ואורגנו יווני"
+  },
+  {
+    "number": 16,
+    "name_he": "פיצה צ'דר פיקנטית",
+    "original_dish": "פיצה ספייסי צ'דר | Spicy Cheddar pizza  🌶🌶",
+    "restaurant": "papi-pizza",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/papi-pizza",
+    "image_url": "https://imageproxy.wolt.com/assets/694a5cb9ba77b0b8b3a18bba",
+    "menu_description": "פיצה עם רוטב של צ'דר ופלפל שאטה, מוצרלה פפרוני וחלפיניו"
+  },
+  {
+    "number": 17,
+    "name_he": "פיצה בלקנית טבעונית",
+    "original_dish": "פיצה בלקנית טבעונית | Vegan Balkan pizza 🌱",
+    "restaurant": "papi-pizza",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/papi-pizza",
+    "image_url": "https://imageproxy.wolt.com/assets/67751aa9a2a1ca7bbf5b23a5",
+    "menu_description": "פיצה עם רוטב פסטו עגבניות, גבינה טבעונית (משו משו) ארטישוק, פלפל קלוי"
+  },
+  {
+    "number": 18,
+    "name_he": "פיצה ביאנקה כמהין",
+    "original_dish": "פיצה ביאנקה כמהין",
+    "restaurant": "nono-givaataim",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/nono-givaataim",
+    "image_url": "https://imageproxy.wolt.com/assets/69aaa2d1cbc8f577235b4603",
+    "menu_description": "רוטב שמנת, מוצרלה, פרמז׳ן, גאודה, מיקס פטריות צלויות וארוגולה"
+  },
+  {
+    "number": 19,
+    "name_he": "רגטוני שמנת כמהין",
+    "original_dish": "פסטה רגטוני שמנת כמהין",
+    "restaurant": "nono-givaataim",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/nono-givaataim",
+    "image_url": "https://imageproxy.wolt.com/assets/69a997afcbc8f577235b0d46",
+    "menu_description": "פטריות צלויות, שמנת, כמהין, פרמז'ן ועירית\nמגיע עם אקסטרה פרמז׳ן בצד"
+  },
+  {
+    "number": 20,
+    "name_he": "ניוקי רוזה רכים",
+    "original_dish": "ניוקי רוזה",
+    "restaurant": "lilush",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/lilush",
+    "image_url": "https://wolt-menu-images-cdn.wolt.com/menu-images/5c1ea2f7714a44000bd9ed4f/75c671f8-e3bf-11eb-9bf8-a6d895b81cd0___________.jpeg",
+    "menu_description": "ניוקי ברוטב שמנת עגבניות עם פטריות, ערמונים ופרמז׳ן. אין אפשרות לשינויים במנה"
+  },
+  {
+    "number": 21,
+    "name_he": "פיצה ארבע גבינות ופטריות",
+    "original_dish": "פיצה אדמה | Adama pizza",
+    "restaurant": "papi-pizza",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/papi-pizza",
+    "image_url": "https://imageproxy.wolt.com/assets/6947cbe888a4d8a18717d8ce",
+    "menu_description": "פיצה עם רוטב ארבע גבינות, פטריות טריות ושמן כמהין"
+  },
+  {
+    "number": 22,
+    "name_he": "פיצה טוסקנית טבעונית",
+    "original_dish": "פיצה טוסקנה טבעונית | Vegan Toscana Pizza 🌱",
+    "restaurant": "papi-pizza",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/papi-pizza",
+    "image_url": "https://imageproxy.wolt.com/assets/694a5c2d88a4d8a1871848fe",
+    "menu_description": "פיצה עם רוטב עגבניות, גבינה טבעונית (משו משו), עגבניות שמש, ארטישוק ופטרוזיליה"
+  },
+  {
+    "number": 23,
+    "name_he": "פיצה קממבר ושרי",
+    "original_dish": "פיצה קממבר",
+    "restaurant": "nono-givaataim",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/nono-givaataim",
+    "image_url": "https://imageproxy.wolt.com/assets/69aaa387cbc8f577235b474a",
+    "menu_description": "רוטב שמנת, קממבר, פרמז'ן, מיקס עגבניות שרי, פלפל חריף ובלסמי"
+  },
+  {
+    "number": 24,
+    "name_he": "פסטת פקורינו ופלפל שחור",
+    "original_dish": "קאוצ'ו אה פפה",
+    "restaurant": "olio-forno",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/olio-forno",
+    "image_url": "https://imageproxy.wolt.com/assets/6a0568685311d3f37cb3c76d",
+    "menu_description": "רוטב שמנת עם פיקורינו רומנו ופלפל שחור גרוס בטעם עמוק ומאוזן\nפסטה טרייה בעבודת יד, יין לבן ופרמז׳ן\nמנה פיקטנית"
+  },
+  {
+    "number": 25,
+    "name_he": "פסטת חמאת עגבניות ומסקרפונה",
+    "original_dish": "חמאת עגבניות",
+    "restaurant": "olio-forno",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/olio-forno",
+    "image_url": "https://imageproxy.wolt.com/assets/6a0567c35311d3f37cb3c753",
+    "menu_description": "רוטב עגבניות תמר וחמאה עם עומק וטעם עשיר\nפסטה טרייה בעבודת יד, שום, בזיליקום וקציפת מסקרפונה"
+  },
+  {
+    "number": 26,
+    "name_he": "ספגטי שום וצ'ילי",
+    "original_dish": "אלי אה אוליו 🌶️",
+    "restaurant": "olio-forno",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/olio-forno",
+    "image_url": "https://imageproxy.wolt.com/assets/6a0569ec4106dd6503d4aa2d",
+    "menu_description": "פסטה טרייה בעבודת יד לבחירה בשמן זית, שום, צ'ילי חריף, פטרוזיליה טרייה והמון פרמז'ן.\nמנה חריפה 🌶️\n*פסטה מומלצת - ספגטי"
+  },
+  {
+    "number": 27,
+    "name_he": "פסטת גורגונזולה ולימון",
+    "original_dish": "שמנת גורגונזולה",
+    "restaurant": "olio-forno",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/olio-forno",
+    "image_url": "https://imageproxy.wolt.com/assets/6a0569814106dd6503d4aa1b",
+    "menu_description": "פסטה טרייה בעבודת יד לבחירה ברוטב חמאה וגבינה כחולה , עירית קצוצה , גרידת לימון ופרמז'ן טרי מעל ."
+  },
+  {
+    "number": 28,
+    "name_he": "ניוקי פטריות וכמהין",
+    "original_dish": "ניוקי כמהין",
+    "restaurant": "lilush",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/lilush",
+    "image_url": "https://wolt-menu-images-cdn.wolt.com/menu-images/5c1ea2f7714a44000bd9ed4f/cf7e1a76-fd79-11ee-99e5-123cf22cb855_save_20240418_125901.jpg",
+    "menu_description": "ניוקי עם פטריות ברוטב שמנת פרמז׳ן וכמהין"
+  },
+  {
+    "number": 29,
+    "name_he": "פסטה בטטה ופטה",
+    "original_dish": "פסטה דה בובטה",
+    "restaurant": "lilush",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/lilush",
+    "image_url": "https://wolt-menu-images-cdn.wolt.com/menu-images/61f876f0-0922-11e9-8628-0a5864606cb4_DSC_0064.jpeg",
+    "menu_description": "בטטה, גבינת פטה, ארוגולה, פרמזן ונגיעות שמנת. בחרו סוג פסטה"
+  },
+  {
+    "number": 30,
+    "name_he": "ספגטי בולונז טלה",
+    "original_dish": "ספגטי בולונז",
+    "restaurant": "nono-givaataim",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/nono-givaataim",
+    "image_url": "https://imageproxy.wolt.com/assets/69aaa8928912b7af88417ec6",
+    "menu_description": "בולונז טלה עם גבינת מוצרלה ופקורינו\nמגיע עם פרמז׳ן בצד\n\n* לא ניתן להוציא את הגבינות מהרוטב"
+  },
+  {
+    "number": 31,
+    "name_he": "אסאדו מפורק עם ערמונים",
+    "original_dish": "אסאדו בצל, פטריות וערמונים",
+    "restaurant": "lilush",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/lilush",
+    "image_url": "https://wolt-menu-images-cdn.wolt.com/menu-images/shared/3764a658-03ae-11ee-ae24-f64804b188d1_____________.jpg",
+    "menu_description": "אסאדו מפורק עם בצל, פטריות, ערמונים ופטרוזיליה מוגש עם אורז. מעט פיקנטי"
+  },
+  {
+    "number": 32,
+    "name_he": "שניצל הבית הזהוב",
+    "original_dish": "שניצל של לילוש",
+    "restaurant": "lilush",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/lilush",
+    "image_url": "https://wolt-menu-images-cdn.wolt.com/menu-images/5c1ea2f7714a44000bd9ed4f/e9aacab6-1670-11ee-8cf0-5ab4ff2f9cca__________3.jpg",
+    "menu_description": "מוגש עם אורז / פירה לבחירה"
+  },
+  {
+    "number": 33,
+    "name_he": "עוף בקוקוס ובזיליקום",
+    "original_dish": "עוף  בקרם קוקוס",
+    "restaurant": "lilush",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/lilush",
+    "image_url": "https://wolt-menu-images-cdn.wolt.com/menu-images/d07ffa48-610c-11e9-b34c-0a5864611251_DSC03220.jpeg",
+    "menu_description": "תבשיל עם בצל, גזר, זוקיני,פטריות ופטרוזליה\n בקרם קוקוס ובזליקום (מעט פיקנטי) | מוגש עם אורז בצד"
+  },
+  {
+    "number": 34,
+    "name_he": "סלמון במיסו וניוקי פריך",
+    "original_dish": "סלמון מיסו",
+    "restaurant": "nono-givaataim",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/nono-givaataim",
+    "image_url": "https://imageproxy.wolt.com/assets/69aaab63cbc8f577235b4c26",
+    "menu_description": "פילה סלמון במיסו, קריספי ניוקי, שעועית ירוקה וחציל קלוי"
+  },
+  {
+    "number": 35,
+    "name_he": "אונטריב צלוי וניוקי קריספי",
+    "original_dish": "אונטריב וקריספי ניוקי",
+    "restaurant": "nono-givaataim",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/nono-givaataim",
+    "image_url": "https://imageproxy.wolt.com/assets/69aaa5be8912b7af88417d6d",
+    "menu_description": "קוביות אונטריב צלויות בטאבון ברוטב שזיפים (מכיל חמאה), מגיע עם קריספי ניוקי"
+  },
+  {
+    "number": 36,
+    "name_he": "עוף מדורה ברוזמרין ודבש",
+    "original_dish": "עוף מדורה 🌾",
+    "restaurant": "nono-givaataim",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/nono-givaataim",
+    "image_url": "https://imageproxy.wolt.com/assets/6a9fe18c2af77c1f54bc1b61",
+    "menu_description": "כרע עוף במרינדה של שום, רוזמרין, סויה ודבש לצד תפו\"א מדורה (או תוספת אחרת לבחירה) \nמגיע עם קרם לאבנה ורוטב שום לימון"
+  },
+  {
+    "number": 37,
+    "name_he": "סלט ניסואז עם טונה וביצה",
+    "original_dish": "סלט ניסואז",
+    "restaurant": "nono-givaataim",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/nono-givaataim",
+    "image_url": "https://imageproxy.wolt.com/assets/6a4a2d48bdc6453ef8823ab1",
+    "menu_description": "חציל צלוי, עגבניה, מלפפון, פטרוזיליה, בצל סגול, ביצה קשה, טונה, צנוברים, סומק וטחינה"
+  },
+  {
+    "number": 38,
+    "name_he": "סלט קינואה שחורה והדרים",
+    "original_dish": "סלט קינואה הדרים",
+    "restaurant": "nono-givaataim",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/nono-givaataim",
+    "image_url": "https://imageproxy.wolt.com/assets/69a9965ce2de7f22b84e616b",
+    "menu_description": "‫קינואה שחורה, גזר מתובל, משמש מיובש, פטרוזיליה, נענע, בצל ירוק, ארוגולה, שקדים קלויים ופיסטוק, מתובל ברוטב הדרים\nללא קמח חיטה 🌾\nטבעוני 🌱"
+  },
+  {
+    "number": 39,
+    "name_he": "סלט עוף וירקות קראנצ'י",
+    "original_dish": "סלט עוף קר",
+    "restaurant": "lilush",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/lilush",
+    "image_url": "https://wolt-menu-images-cdn.wolt.com/menu-images/093a773e-0c10-11e9-8980-0a586461028a________.jpeg",
+    "menu_description": "‫חסה, מלפפון, מלפפון חמוץ, בצל סגול, שיבקה, חזה עוף (150 גר') ברוטב טרטורה"
+  },
+  {
+    "number": 40,
+    "name_he": "קאיסן ראמן פירות ים",
+    "original_dish": "קאיסן ראמן🌶️",
+    "restaurant": "oban-koban",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/oban-koban",
+    "image_url": "https://imageproxy.wolt.com/assets/6ae722a351fdd0fdbcf5d589",
+    "menu_description": "ציר דגים עדין, מחית מיסו, שומשום, קרם שום, צ'ילי, שרימפס, אטריות ראמן, חצי ביצה, פטריות שיטאקי, תרד, נבטים ובצל ירוק *פיקנטי"
+  },
+  {
+    "number": 41,
+    "name_he": "יאקי אודון רופונגי",
+    "original_dish": "רופונגי יאקי אודון",
+    "restaurant": "oban-koban",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/oban-koban",
+    "image_url": "https://imageproxy.wolt.com/assets/6ae724cf23810598d1b90142",
+    "menu_description": "אנטריקוט פרוס דק, אטריות אודון, פטריות שיטאקי ושמפיניון, ברוקולי ובצל סגול ברוטב סויה מיסו מתקתק-מלוח"
+  },
+  {
+    "number": 42,
+    "name_he": "רול סלמון יפני",
+    "original_dish": "סלמון רול",
+    "restaurant": "oban-koban",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/oban-koban",
+    "image_url": "https://imageproxy.wolt.com/assets/6ae722b207d4ff6621e7d5d3",
+    "menu_description": "סלמון, אבוקדו, עירית וקנפיו עטוף בסלמון צרוב ברוטב טרה"
+  },
+  {
+    "number": 43,
+    "name_he": "ביבימבאפ פרגית קוריאני",
+    "original_dish": "ביבימבאפ סטייק פרגית",
+    "restaurant": "jon-mattaeng",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/jon-mattaeng",
+    "image_url": "https://imageproxy.wolt.com/assets/67585d480ec5bc0fde36b355",
+    "menu_description": "רצועות סטייק פרגית צלוי בגריל בתערובת תבלינים"
+  },
+  {
+    "number": 44,
+    "name_he": "אטריות ג'אג'אנגמיון",
+    "original_dish": "אטריות ג’אג’אנגמיון",
+    "restaurant": "jon-mattaeng",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/jon-mattaeng",
+    "image_url": "https://imageproxy.wolt.com/assets/698df22f0edcf1136ce15c66",
+    "menu_description": "‫תבשיל קוריאני עשיר של אטריות אודון ברוטב שעועית שחורה עם פרגית, גזר, תפוחי אדמה ובצל לבן,\nמוגש עם מלפפון טרי וביצה רכה בסויה"
+  },
+  {
+    "number": 45,
+    "name_he": "גימבאפ טופו קריספי",
+    "original_dish": "רול נייקד גימבאפ טופו קריספי 🌱",
+    "restaurant": "jon-mattaeng",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/jon-mattaeng",
+    "image_url": "https://imageproxy.wolt.com/assets/6755787d33d8b646b502d2a5",
+    "menu_description": "טופו קריספי בציפוי מתקתק, סלק, תרד חלוט, מלפפון, סויה מתוקה, רוטב סאמג'אנג"
+  },
+  {
+    "number": 46,
+    "name_he": "רול סלמון אפוי",
+    "original_dish": "ספיישל סלמון אפוי",
+    "restaurant": "chimera",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/chimera",
+    "image_url": "https://wolt-menu-images-cdn.wolt.com/menu-images/3edfbe0c-1b47-11ea-ae77-0a586468d990_DSC00209.jpeg",
+    "menu_description": "סלמון אפוי, בטטה, שבבי טמפורה ושיטקה, עטוף באבוקדו"
+  },
+  {
+    "number": 47,
+    "name_he": "רול שירו טמפורה",
+    "original_dish": "שירו טמפורה",
+    "restaurant": "chimera",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/chimera",
+    "image_url": "https://wolt-menu-images-cdn.wolt.com/menu-images/5dbab129ff6d5acb68c70b2d/cf9e596e-7f4d-11ec-a71e-76c8e7c8b39d__________________________.jpeg",
+    "menu_description": "דג לבן בטמפורה, אבוקדו, מלפפון, איולי יוזו, עטוף בטוביקו אדום"
+  },
+  {
+    "number": 48,
+    "name_he": "קארי ירוק עם טופו",
+    "original_dish": "קארי ירוק עם טופו 🌶️🌱",
+    "restaurant": "chimera",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/chimera",
+    "image_url": "https://wolt-menu-images-cdn.wolt.com/menu-images/017374fc-1b45-11ea-bb4f-0a5864697472__________________.jpeg",
+    "menu_description": "תבשיל קארי ירוק על בסיס עשבי תיבול טריים, למון גראס, קרם קוקוס, פאק צ'וי, ברוקולי ,בזיליקום, שעועית ובצל. מוגש עם אורז"
+  },
+  {
+    "number": 49,
+    "name_he": "סומו ראמן חריף",
+    "original_dish": "סומו ראמן 🌶",
+    "restaurant": "food-terminal-tel-aviv",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/food-terminal-tel-aviv",
+    "image_url": "https://wolt-menu-images-cdn.wolt.com/menu-images/632bf72cec26853c2a7604e2/7137a876-529c-11ed-986c-6aec3f6d2200_zesushi_26.7.2120693_2.jpeg",
+    "menu_description": "אטריות ראמן בציר בקר ותערובת פיקנטית על בסיס קוקוס, צ'ילי קוריאני ושומשום.  בקר טחון , ביצת ראמן, באק צ'וי טרי, פטריות שיטקאה,  אצות וואקמה, מחית צ'ילי, בצל ירוק ושומשום שחור ולבן"
+  },
+  {
+    "number": 50,
+    "name_he": "סושי סלמון ואיקורה",
+    "original_dish": "סלמון מעטפת איקורה",
+    "restaurant": "food-terminal-tel-aviv",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/food-terminal-tel-aviv",
+    "image_url": "https://wolt-menu-images-cdn.wolt.com/menu-images/606d5b228ae7c7c7a379f67c/96920168-5692-11ec-aa2e-2e16e088215c_29.11.20_063.jpeg",
+    "menu_description": "8 יח' | סלמון, אספרגוס טמפורה, גבינת שמנת ובצל ירוק במעטפת איקורה ושומשום"
+  },
+  {
+    "number": 51,
+    "name_he": "פו בו וייטנאמי",
+    "original_dish": "פו בו",
+    "restaurant": "food-terminal-tel-aviv",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/food-terminal-tel-aviv",
+    "image_url": "https://wolt-menu-images-cdn.wolt.com/menu-images/632bf72cec26853c2a7604e2/3a517ae6-3fc6-11ed-be02-76f7dc76680b__________.jpeg",
+    "menu_description": "נתחי בקר, עשבים טריים, בצל לבן, צ'ילי, אניס, קינמון, נבטים ואטריות אורז טריות בציר בקר עשיר."
+  },
+  {
+    "number": 52,
+    "name_he": "נודלס עוף סאטה",
+    "original_dish": "צ'יקן סאטה נודלס",
+    "restaurant": "wok-republic-london-ministore",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/wok-republic-london-ministore",
+    "image_url": "https://imageproxy.wolt.com/assets/69d2584f7f43a0242059a2cf",
+    "menu_description": "אטריות ביצים עם נתחי עוף ברוטב קוקוס, חמאת בוטנים, כרוב , בצל ירוק, כוסברה ובוטנים קצוצים"
+  },
+  {
+    "number": 53,
+    "name_he": "אטריות אורז עם בקר",
+    "original_dish": "ביף רייס נודלס",
+    "restaurant": "wok-republic-london-ministore",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/wok-republic-london-ministore",
+    "image_url": "https://imageproxy.wolt.com/assets/69d25a6f7f43a0242059a2f2",
+    "menu_description": "אטריות אורז עם נתחי בקר ברוטב סויה קלאסי, כרוב, שעועית ירוקה, בצל ירוק, נבטים ושומשום"
+  },
+  {
+    "number": 54,
+    "name_he": "קונג פאו נודלס",
+    "original_dish": "קונג פאו נודלס  🌶️ 🌶️",
+    "restaurant": "wok-republic-london-ministore",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/wok-republic-london-ministore",
+    "image_url": "https://imageproxy.wolt.com/assets/69d25ad1552531f6f06da463",
+    "menu_description": "‫אטריות ביצים עם נתחי עוף ואווז מעושן/בייקון (5+)  ברוטב סויה כהה,  פלפל אדום, בצל ירוק, צ׳ילי חריף , אגוזי קשיו ושומשום"
+  },
+  {
+    "number": 55,
+    "name_he": "רנדאנג בקר מלזי",
+    "original_dish": "ביף רנדנג🌶️ Rendang",
+    "restaurant": "lumpur",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/lumpur",
+    "image_url": "https://wolt-menu-images-cdn.wolt.com/menu-images/shared/03be0f1e-eff5-11ed-a0c2-ea793aff230d___________1122334501.jpg",
+    "menu_description": "בקר בבישול ארוך עם קוקוס וכפיר ליים. מנת חתונות במלזיה. מוגש עם אורז"
+  },
+  {
+    "number": 56,
+    "name_he": "שרימפס בלמון גראס",
+    "original_dish": "שרימפס וייטנאמי  Shrimps lemon grass",
+    "restaurant": "lumpur",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/lumpur",
+    "image_url": "https://wolt-menu-images-cdn.wolt.com/menu-images/645bd4b2f026a2f6a1222ec1/066cc188-ff90-11ed-af74-e6ef29555098_bfca1a14_1215_49f1_b015_a91b296a3417.jpeg",
+    "menu_description": "ברוטב למון גראס ועלים ארומטיים. מוגש עם אורז"
+  },
+  {
+    "number": 57,
+    "name_he": "פאד תאי עוף ותמרינדי",
+    "original_dish": "פאד תאי עוף",
+    "restaurant": "chimera",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/chimera",
+    "image_url": "https://wolt-menu-images-cdn.wolt.com/menu-images/1db8d8fa-1b45-11ea-b729-0a58646aef05____________.jpeg",
+    "menu_description": "אטריות אורז, עוף, כרוב, גזר, בצל ירוק, ברוטב תמרינדי (על בסיס פיש סוס). מוגש עם בוטנים, כוסברה ונבטים סיניים\nפחות מומלץ במשלוח*"
+  },
+  {
+    "number": 58,
+    "name_he": "סטייק מוקפץ בפלפל שחור",
+    "original_dish": "פפר סטייק",
+    "restaurant": "chimera",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/chimera",
+    "image_url": "https://wolt-menu-images-cdn.wolt.com/menu-images/12c391f6-1b45-11ea-972e-0a58646ae60d__________.jpeg",
+    "menu_description": "בקר מוקפץ בפלפלים אדומים וירוקים, בצל סגול, בצל ירוק וכרישה ברוטב פלפל שחור ומיסו. מוגש על אורז"
+  },
+  {
+    "number": 59,
+    "name_he": "שיפודי סלמון על אורז יפני",
+    "original_dish": "יקיטורי דון",
+    "restaurant": "chimera",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/chimera",
+    "image_url": "https://wolt-menu-images-cdn.wolt.com/menu-images/09a2849c-1b45-11ea-97cf-0a586469d030________.jpeg",
+    "menu_description": "שיפודי סלמון, ברוקולי, פטריות פורטובלו, בצל ירוק, בצל סגול ורוטב טארה. מוגש על מצע אורז"
+  },
+  {
+    "number": 60,
+    "name_he": "באטר צ'יקן הודי",
+    "original_dish": "Butter Chicken",
+    "restaurant": "tandoori-tel-aviv",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/tandoori-tel-aviv",
+    "image_url": "https://wolt-menu-images-cdn.wolt.com/menu-images/shared/c37771b8-2c83-11ee-a6bc-82c2625f9fbf___________.jpg",
+    "menu_description": "Boneless chicken fillet grilled roasted in the tandoor and cooked in creamy delicate tomato sauce"
+  },
+  {
+    "number": 61,
+    "name_he": "פלאק פניר בתרד",
+    "original_dish": "Palak Paneer",
+    "restaurant": "tandoori-tel-aviv",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/tandoori-tel-aviv",
+    "image_url": "https://wolt-menu-images-cdn.wolt.com/menu-images/fc6c930e-09f0-11ea-9120-0a586465f465_yaelitz-38.jpeg",
+    "menu_description": "Diced paneer cheese cooked in a creamy spinach sauce seasoned with masala spices"
+  },
+  {
+    "number": 62,
+    "name_he": "טיקה מסאלה עוף",
+    "original_dish": "Chicken Tikka Masala",
+    "restaurant": "tandoori-tel-aviv",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/tandoori-tel-aviv",
+    "image_url": "https://wolt-menu-images-cdn.wolt.com/menu-images/4ab04dda-054b-11ea-b86d-0a58646010db_yaelitz-13.jpeg",
+    "menu_description": "Chicken fillet roasted in the tandoor and cooked to perfection in traditional spices, tomato, and onion sauce"
+  },
+  {
+    "number": 63,
+    "name_he": "שיפודי עוף זפרני",
+    "original_dish": "Chicken Zafrani 🌶 🌾",
+    "restaurant": "indira",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/indira",
+    "image_url": "https://wolt-menu-images-cdn.wolt.com/menu-images/57aa08c2-7d34-11e9-9c7f-0a586461f812_chicken_zafrani.jpeg",
+    "menu_description": "Skewered chicken marinated in parsley, garlic and chipotle pepper"
+  },
+  {
+    "number": 64,
+    "name_he": "צ'אנה מסאלה חומוס",
+    "original_dish": "Channa Masala 🌱 🌾",
+    "restaurant": "indira",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/indira",
+    "image_url": "https://wolt-menu-images-cdn.wolt.com/menu-images/e2e7fc90-7d35-11e9-8642-0a586461f619_Chana_Masala.jpeg",
+    "menu_description": "Chickpeas cooked in a tomato based sauce"
+  },
+  {
+    "number": 65,
+    "name_he": "וינדאלו עוף חריף",
+    "original_dish": "Chicken Vindaloo",
+    "restaurant": "tandoori-tel-aviv",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/tandoori-tel-aviv",
+    "image_url": "https://wolt-menu-images-cdn.wolt.com/menu-images/0c1ea762-09ef-11ea-b96c-0a586466c040_yaelitz-18.jpeg",
+    "menu_description": "Boneless chicken fillet cooked in a spicy chili, ginger curry sauce"
+  },
+  {
+    "number": 66,
+    "name_he": "ביריאני טלה וזעפרן",
+    "original_dish": "Lamb Biryani",
+    "restaurant": "tandoori-tel-aviv",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/tandoori-tel-aviv",
+    "image_url": "https://wolt-menu-images-cdn.wolt.com/menu-images/28effce8-09f3-11ea-8cae-0a5864676d03_yaelitz-15.jpeg",
+    "menu_description": "Basmati rice cooked with diced lamb meet, saffron and spices"
+  },
+  {
+    "number": 67,
+    "name_he": "קארי ירוק טופו וחצילים",
+    "original_dish": "Tofu, Eggplant, and Broccoli in Green Curry",
+    "restaurant": "tandoori-tel-aviv",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/tandoori-tel-aviv",
+    "image_url": "https://wolt-menu-images-cdn.wolt.com/menu-images/5d8a107bc155b33a5dbee5ea/515c0ea0-2c82-11ee-b6a2-2a5e63b3a7d5_______________.jpg",
+    "menu_description": "Fresh tofu cooked with zucchini, eggplant, and broccoli in a spicy green curry, coconut cream sauce, and fried peanuts"
+  },
+  {
+    "number": 68,
+    "name_he": "בוריטו קרניטס",
+    "original_dish": "בוריטו קרניטה🌶",
+    "restaurant": "taqueria-1",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/taqueria-1",
+    "image_url": "https://imageproxy.wolt.com/assets/69a579907d25f60394a07c9f",
+    "menu_description": "‫כתף חזיר בבישול ארוך ברוטב אדובו ואננס, אורז, שעועית, פיקו דה גאיו, שמנת חמוצה, סלסה רוחה, גבינה וחסה"
+  },
+  {
+    "number": 69,
+    "name_he": "קסדייה פטריות טבעונית",
+    "original_dish": "קסדייה פטריות טבעונית 🌱",
+    "restaurant": "taqueria-1",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/taqueria-1",
+    "image_url": "https://wolt-menu-images-cdn.wolt.com/menu-images/5c0d6217b15e7a000a1f03ab/11e43012-fc2f-11ea-b011-868091fb31bc______.jpeg",
+    "menu_description": "גבינה טבעונית, פטריות יער במרינדת צ'יפוטלה, כוסברה ובצל ירוק, מוגש עם עגבניות שרופות וגוואקמולי"
+  },
+  {
+    "number": 70,
+    "name_he": "בוריטו שרימפס חריף",
+    "original_dish": "בוריטו קמרונס🌶",
+    "restaurant": "taqueria-1",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/taqueria-1",
+    "image_url": "https://imageproxy.wolt.com/assets/69a579a77d25f60394a07ca5",
+    "menu_description": "מתכון חדש-  שרימפס במרינדת אדובו, אורז, פיקו דה גאיו, טרטר מקסיקני, כרוב, כוסברה, איולי צ'יפוטלה"
+  },
+  {
+    "number": 71,
+    "name_he": "בוריטו דג פריך וסלסה",
+    "original_dish": "בוריטו פסקדו פריטו",
+    "restaurant": "taqueria-1",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/taqueria-1",
+    "image_url": "https://wolt-menu-images-cdn.wolt.com/menu-images/38e32eca-c8cd-11e9-8ab5-0a586467c8d3_Taqueria_10.jpeg",
+    "menu_description": "‫דג קוד בבלילת בירה, אורז, פיקו דה גאיו, כרוב, טרטר מקסיקני וסלסה ורדה"
+  },
+  {
+    "number": 72,
+    "name_he": "בוריטו לחי עגל בבישול ארוך",
+    "original_dish": "בוריטו לחי עגל",
+    "restaurant": "taqueria-1",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/taqueria-1",
+    "image_url": "https://imageproxy.wolt.com/assets/69a579197d25f60394a07c74",
+    "menu_description": "לחי עגל, אורז, שעועית, פיקו דה גאיו, שמנת חמוצה, סלסה רוחה, גבינה וחסה"
+  },
+  {
+    "number": 73,
+    "name_he": "בוריטו סטייק טבעוני וטקילה",
+    "original_dish": "בוריטו צ'אנק סטייק טבעוני 🌱",
+    "restaurant": "taqueria-1",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/taqueria-1",
+    "image_url": "https://imageproxy.wolt.com/assets/69a5883d7d25f60394a0843b",
+    "menu_description": "צ'אנק סטייק במרינדת טקילה וליים, אורז ,שעועית, פיקו דה גאיו, גבינה טבעונית סלסה רוחה וחסה"
+  },
+  {
+    "number": 74,
+    "name_he": "חומוס חם עם שייטל",
+    "original_dish": "חומוס בשר שייטל حمص لحمة مفرومة",
+    "restaurant": "hummus-gargerim",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/hummus-gargerim",
+    "image_url": "https://imageproxy.wolt.com/assets/6a59dc9807d981ab44b8cb73",
+    "menu_description": ""
+  },
+  {
+    "number": 75,
+    "name_he": "חמשוקה במחבת",
+    "original_dish": "חמשוקה حمشوكة",
+    "restaurant": "hummus-gargerim",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/hummus-gargerim",
+    "image_url": "https://wolt-menu-images-cdn.wolt.com/menu-images/64c8c8cdeb4ed4be764a7be4/91ee8d02-307a-11ee-a943-2a52c5acdc7c________2.jpg",
+    "menu_description": "חומוס עם שקשוקה עגבניות\nحمص مع شكشوكة بندورة"
+  },
+  {
+    "number": 76,
+    "name_he": "פיתה פלאפל וטחינה",
+    "original_dish": "פיתה פלאפל رغيف فلافل",
+    "restaurant": "hummus-gargerim",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/hummus-gargerim",
+    "image_url": "https://imageproxy.wolt.com/assets/6a59dc9107d981ab44b8cb6d",
+    "menu_description": ""
+  },
+  {
+    "number": 77,
+    "name_he": "סמבוסק סביח יפואי",
+    "original_dish": "סמבוסק סביח سمبوسك صبيح",
+    "restaurant": "abulafia-allenby",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/abulafia-allenby",
+    "image_url": "https://wolt-menu-images-cdn.wolt.com/menu-images/621f60a457b3f6bc28ab641b/3ffe8942-9d2e-11ec-ac0d-f20473b18c1f__________________.jpeg",
+    "menu_description": "‫חציל קלוי ומטוגן, ביצה קשה, טחינה, בצל סגול ופטרוזיליה\nباذنجان مقلي، بيضة، طحينة، بصل احمر وبقدونس"
+  },
+  {
+    "number": 78,
+    "name_he": "סמבוסק ביצה, פטריות ותפוח אדמה",
+    "original_dish": "סמבוסק מעורב سمبوسك معوراف",
+    "restaurant": "abulafia-allenby",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/abulafia-allenby",
+    "image_url": "https://wolt-menu-images-cdn.wolt.com/menu-images/621f60a457b3f6bc28ab641b/7423f93c-9d2e-11ec-aa09-8a33f1b4744a_____________.jpeg",
+    "menu_description": "תפו״א, ביצה קשה, פטריות וגבינה צהובה\nبطاطا، بيضة، فطر وجبنة صفرة"
+  },
+  {
+    "number": 79,
+    "name_he": "פיתה פרגית צרובה",
+    "original_dish": "פרגית בפיתה برغيت برغيف",
+    "restaurant": "hummus-gargerim",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/hummus-gargerim",
+    "image_url": "https://imageproxy.wolt.com/assets/6a59dc9a07d981ab44b8cb75",
+    "menu_description": "סלטים וממרחים לבחירה בפיתה\nسلطات وصلصات للاختيار برغيف"
+  },
+  {
+    "number": 80,
+    "name_he": "חומוס עם פטריות חמות",
+    "original_dish": "חומוס פטריות حمص فطر",
+    "restaurant": "hummus-gargerim",
+    "restaurant_url": "https://wolt.com/en/isr/tel-aviv/restaurant/hummus-gargerim",
+    "image_url": "https://wolt-menu-images-cdn.wolt.com/menu-images/64c8c8cdeb4ed4be764a7be4/811efc6e-307a-11ee-9847-5217d8a066cc_0y6a0634.jpg",
+    "menu_description": ""
+  }
+]

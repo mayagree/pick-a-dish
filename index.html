@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ff4b00">
+  <meta name="description" content="מתוך כל האפשרויות בוחרים רק מנה אחת. כדאי לבחור בקפידה, כי הבחירה סופית.">
+  <title>מה בא לך לאכול?</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700;800&family=Heebo:wght@500;600;700;800;900&display=swap');
+
+    :root {
+      color-scheme: light;
+      --ink: #141414;
+      --muted: #6b6873;
+      --line: #e9ebef;
+      --surface: #ffffff;
+      --background: #faf9f6;
+      --accent: #3926ff;
+      --accent-dark: #2818d8;
+      --accent-soft: #edeaff;
+      --radius: 20px;
+      font-family: "Assistant", "Noto Sans Hebrew", Arial, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { min-width: 0; scroll-behavior: smooth; }
+    body { margin: 0; min-width: 0; overflow-x: clip; background: var(--background); color: var(--ink); }
+    body.has-overlay { overflow: hidden; }
+    button { font: inherit; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+    button:focus-visible { outline: 3px solid #f22957; outline-offset: 3px; }
+    img { display: block; max-width: 100%; }
+    [hidden] { display: none !important; }
+
+    .screen { min-height: 100svh; }
+    .container { width: min(100% - 32px, 780px); margin-inline: auto; }
+    .eyebrow { color: #ff4b00; font-size: .86rem; font-weight: 800; letter-spacing: .01em; }
+
+    /* Opening screen */
+    .intro-screen {
+      display: flex;
+      flex-direction: column;
+      padding: max(12px, env(safe-area-inset-top)) 12px max(12px, env(safe-area-inset-bottom));
+      background: #ff4b00;
+    }
+    .intro-screen .container {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      width: 100%;
+      max-width: 560px;
+      padding: 25px 23px max(24px, env(safe-area-inset-bottom));
+      position: relative;
+      background: #faf8f4;
+      border: 1px solid #f1ece4;
+      overflow: hidden;
+    }
+    .intro-top { display: flex; align-items: center; justify-content: flex-end; gap: 18px; }
+    .intro-rosette { width: 45px; height: 45px; flex: 0 0 auto; background: #f22957; border-radius: 45% 55% 62% 38% / 62% 39% 61% 38%; transform: rotate(25deg); }
+    .intro-rosette::before { content: ""; display: block; width: 100%; height: 100%; background: inherit; border-radius: inherit; transform: rotate(54deg); }
+    .intro-main { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 45px 0 24px; }
+    .intro-kicker { margin: 0 0 9px; color: #3926ff; font-size: .97rem; font-weight: 800; }
+    .intro-title { max-width: 100%; margin: 0; font-family: "Heebo", Arial, sans-serif; font-size: clamp(4.5rem, 24vw, 7.5rem); line-height: .95; letter-spacing: -.078em; font-weight: 900; color: #ff4b00; }
+    .intro-title span { display: block; white-space: nowrap; }
+    .intro-title .title-blue { color: #3926ff; }
+    .intro-scribble { display: block; width: 120px; height: 62px; margin: 13px 0 12px; fill: none; stroke: #3926ff; stroke-linecap: round; stroke-width: 2.1; }
+    .intro-description { color: #242127; font-size: clamp(1.05rem, 4.55vw, 1.23rem); line-height: 1.43; max-width: 450px; margin: 0; }
+    .intro-description strong { color: #3926ff; font-family: "Heebo", Arial, sans-serif; font-weight: 900; }
+    .intro-actions { margin-top: auto; padding-top: 14px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 54px; padding: 13px 19px; border: 0; border-radius: 14px; font-size: 1.08rem; font-weight: 800; transition: background .15s ease, transform .15s ease; }
+    .btn:active { transform: scale(.985); }
+    .btn-primary { color: #fff; background: var(--accent); box-shadow: 0 7px 0 #3926ff18; }
+    .btn-primary:hover { background: var(--accent-dark); }
+    .btn-secondary { color: var(--ink); background: #f2f3f5; }
+    .btn-secondary:hover { background: #e8ebef; }
+    .btn-block { width: 100%; }
+
+    /* Menu cards */
+    .menu-screen { padding: max(22px, env(safe-area-inset-top)) 0 max(45px, env(safe-area-inset-bottom)); }
+    .menu-header { padding-top: 44px; padding-bottom: 22px; }
+    .menu-heading { margin: 0 0 9px; color: #ff4b00; font-family: "Heebo", Arial, sans-serif; font-size: clamp(1.85rem, 6vw, 2.6rem); font-weight: 900; letter-spacing: -.045em; line-height: 1.2; }
+    .menu-subheading { margin: 0; color: var(--muted); font-size: .96rem; }
+    .menu-count { display: inline-flex; margin-top: 17px; border-radius: 9px; padding: 7px 10px; background: #fff; border: 1px solid var(--line); color: #66717e; font-size: .82rem; font-weight: 800; }
+    .photo-credit { margin: 28px 0 0; color: #8d96a2; text-align: center; font-size: .78rem; }
+    .photo-credit a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+    .dish-list { display: grid; grid-template-columns: minmax(0, 1fr); gap: 9px; }
+    .dish-card { width: 100%; min-width: 0; min-height: 84px; display: flex; align-items: center; gap: 13px; text-align: right; padding: 13px 16px; border: 1px solid #eceef1; border-radius: 17px; background: var(--surface); color: var(--ink); box-shadow: 0 3px 10px #15263a07; }
+    .dish-card:hover { border-color: #beb7ff; box-shadow: 0 8px 20px #1722310d; }
+    .image-fallback { display: none; font-size: 2rem; }
+    .is-missing .image-fallback { display: block; }
+    .dish-card__body { min-width: 0; flex: 1; display: flex; flex-direction: column; align-items: flex-start; gap: 7px; }
+    .dish-card__name { font-size: 1.01rem; line-height: 1.28; font-weight: 800; overflow-wrap: anywhere; }
+    .tag { display: inline-flex; align-items: center; padding: 5px 9px; max-width: 100%; border-radius: 7px; color: #3b5664; background: #e7f1f6; font-size: .78rem; line-height: 1.1; font-weight: 800; }
+    .tag--vegan { color: #3a2cbb; background: #e7e3ff; }
+    .tag--vegetarian { color: #7c4b00; background: #ffedb7; }
+    .tag--spicy { color: #a50b32; background: #ffe1e9; }
+    .tag--piquant { color: #b23000; background: #ffe5d5; }
+    .tag--chef { color: #a63300; background: #ffe0cc; }
+    .tag--hit { color: #3521cf; background: #e5e0ff; }
+    .tag--crispy { color: #755000; background: #fff1c0; }
+    .tag--classic { color: #5047b7; background: #ebe9ff; }
+    .tag--special { color: #aa214b; background: #ffdfeb; }
+    .tag--indulgent { color: #ab1b48; background: #ffdce8; }
+    .card-chevron { flex: 0 0 20px; text-align: center; font-size: 1.55rem; color: #b1b8c0; margin-left: 5px; }
+
+    /* The timer stays hidden until the last 15 seconds, then floats above open sheets. */
+    .timer { position: fixed; z-index: 100; top: max(15px, env(safe-area-inset-top)); left: max(15px, env(safe-area-inset-left)); display: flex; align-items: center; gap: 8px; direction: rtl; background: #3926ff; color: #fff; border: 2px solid transparent; border-radius: 15px; padding: 10px 12px; box-shadow: 0 8px 25px #11243a26; }
+    .timer:not([hidden]):not(.urgent) { animation: timer-appear .32s cubic-bezier(.2, 1.6, .45, 1) both; }
+    @keyframes timer-appear { from { transform: translateY(-16px) scale(.87); opacity: 0; } to { transform: translateY(0) scale(1); opacity: 1; } }
+    .timer-label { font-size: .75rem; font-weight: 700; opacity: .8; }
+    .timer-output { font-size: 1.28rem; font-weight: 900; line-height: 1; font-variant-numeric: tabular-nums; letter-spacing: -.025em; }
+    .timer.urgent { background: #f22957; border-color: #ffc83d; animation: timer-flash .85s step-end infinite; }
+    @keyframes timer-flash { 50% { background: #aa173c; box-shadow: 0 0 0 5px #f2295729; } }
+
+    /* Overlays */
+    .overlay { position: fixed; inset: 0; z-index: 30; display: flex; justify-content: center; align-items: flex-end; padding-top: 76px; }
+    .overlay-shade { position: absolute; inset: 0; background: #0c1922ad; }
+    .detail-sheet { position: relative; width: min(100%, 560px); max-height: calc(100dvh - 76px); background: #fff; border-radius: 25px 25px 0 0; overflow-y: auto; overscroll-behavior: contain; box-shadow: 0 0 45px #101b2924; animation: sheet-enter .22s ease both; }
+    .sheet-handle { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); width: 39px; height: 5px; border-radius: 99px; background: #ffffffd8; z-index: 1; box-shadow: 0 1px 3px #0002; }
+    .detail-visual { width: 100%; height: clamp(210px, 32dvh, 290px); position: relative; display: grid; place-items: center; background: #edf2f1; overflow: hidden; }
+    .detail-visual img { width: 100%; height: 100%; object-fit: cover; }
+    .detail-visual .image-fallback { font-size: 5rem; }
+    .icon-close { position: absolute; top: 18px; right: 17px; width: 37px; height: 37px; display: grid; place-items: center; border: 0; border-radius: 50%; background: #fffffff0; color: #172231; font-size: 1.5rem; line-height: 1; box-shadow: 0 2px 8px #1112; }
+    .detail-content { padding: 24px 23px max(20px, env(safe-area-inset-bottom)); }
+    .detail-content h2 { margin: 13px 0 12px; font-size: clamp(1.7rem, 7vw, 2rem); line-height: 1.14; letter-spacing: -.035em; }
+    .detail-content p { margin: 0; line-height: 1.75; font-size: 1rem; color: #586372; }
+    .detail-actions { display: grid; gap: 9px; margin-top: 26px; }
+    @keyframes sheet-enter { from { transform: translateY(22px); opacity: .6; } to { transform: translateY(0); opacity: 1; } }
+
+    .confirmation-overlay { z-index: 40; align-items: center; padding: 84px 16px 22px; }
+    .confirmation-card { position: relative; width: min(100%, 445px); max-height: calc(100dvh - 110px); overflow-y: auto; padding: 28px 23px 22px; background: #fff; border-radius: 24px; box-shadow: 0 22px 65px #111d3233; animation: confirmation-enter .2s ease both; }
+    .confirm-icon { display: grid; place-items: center; width: 47px; height: 47px; border-radius: 15px; margin-bottom: 20px; background: #fff0bf; color: #3926ff; font-size: 1.65rem; font-weight: 900; }
+    .confirmation-card h2 { margin: 8px 0 12px; font-size: 1.62rem; letter-spacing: -.025em; }
+    .confirmation-card p { color: #5d6875; font-size: 1rem; line-height: 1.78; margin: 0; }
+    .confirmation-card strong { color: #3926ff; font-size: 1.13em; }
+    .confirmation-actions { display: grid; gap: 10px; margin-top: 26px; }
+    @keyframes confirmation-enter { from { opacity: 0; transform: translateY(12px) scale(.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+
+    /* Neutral ending */
+    .result-screen { display: flex; align-items: center; justify-content: center; text-align: center; padding: 30px 22px; background: #faf8f4; }
+    .result-content { width: min(100%, 540px); }
+    .result-symbol { display: grid; place-items: center; width: 132px; height: 142px; margin: 0 auto 22px; }
+    .result-check { display: grid; place-items: center; width: 90px; height: 90px; border-radius: 50%; background: #ffc83d; color: #3926ff; font-family: "Heebo", Arial, sans-serif; font-size: 3.6rem; font-weight: 900; transform: rotate(-10deg); }
+    .result-hourglass { width: 125px; height: 137px; overflow: visible; }
+    .result-content h1 { margin: 0 0 14px; font-size: clamp(2rem, 9vw, 3rem); line-height: 1.25; letter-spacing: -.035em; }
+    .result-content p { color: #637080; font-size: 1.08rem; line-height: 1.75; margin: 0; }
+
+    @media (min-width: 640px) {
+      .intro-screen .container { max-width: 560px; }
+      .intro-main { padding: 50px 0 30px; }
+      .dish-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+      .menu-header { padding-bottom: 28px; }
+      .overlay { align-items: center; padding: 55px 15px; }
+      .detail-sheet { border-radius: 24px; max-height: calc(100dvh - 80px); }
+      .sheet-handle { display: none; }
+      .detail-actions { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 360px) {
+      .intro-screen .container { padding-inline: 18px; }
+      .intro-title { font-size: clamp(4rem, 22.5vw, 5rem); }
+      .intro-main { padding-top: 32px; }
+      .intro-scribble { margin-top: 10px; }
+      .dish-card { gap: 10px; }
+      .dish-card__name { font-size: .92rem; }
+      .card-chevron { margin-left: 0; }
+    }
+    @media (max-height: 720px) {
+      .intro-screen .container { padding-top: 16px; padding-bottom: 16px; }
+      .intro-main { padding-top: 18px; padding-bottom: 10px; }
+      .intro-scribble { height: 48px; margin-top: 6px; margin-bottom: 6px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .timer.urgent { animation: none; }
+      .timer:not([hidden]):not(.urgent) { animation: none; }
+      .detail-sheet, .confirmation-card { animation: none; }
+      .btn { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <main id="app">
+    <section id="introScreen" class="screen intro-screen" aria-labelledby="introTitle">
+      <div class="container">
+        <div class="intro-top">
+          <span class="intro-rosette" aria-hidden="true"></span>
+        </div>
+        <div class="intro-main">
+          <p class="intro-kicker">האתגר שלך מתחיל כאן</p>
+          <h1 id="introTitle" class="intro-title"><span>מה הכי</span><span class="title-blue">בא לך</span><span>לאכול?</span></h1>
+          <svg class="intro-scribble" viewBox="0 0 120 62" aria-hidden="true">
+            <path d="M3 42 C17 12, 30 9, 35 32 S26 65, 49 48 S60 2, 73 26 S82 57, 99 35 S108 20, 117 31"></path>
+          </svg>
+          <p class="intro-description">מתוך כל האפשרויות, אפשר לבחור <strong>רק מנה אחת</strong>. כדאי לבחור בקפידה, כי הבחירה סופית.</p>
+        </div>
+        <div class="intro-actions">
+          <button id="startButton" class="btn btn-primary btn-block" type="button">התחל</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="menuScreen" class="screen menu-screen" aria-labelledby="menuTitle" hidden>
+      <div class="container">
+        <header class="menu-header">
+          <h1 id="menuTitle" class="menu-heading" tabindex="-1">מה אוכלים היום?</h1>
+          <p class="menu-subheading">יש פה משהו בדיוק בשבילך. לחצו על מנה לפרטים.</p>
+        </header>
+        <div id="dishList" class="dish-list" aria-label="רשימת המנות"></div>
+        <p class="photo-credit">צילומי המנות מתוך תפריטי המסעדות בוולט</p>
+      </div>
+    </section>
+
+    <section id="resultScreen" class="screen result-screen" aria-labelledby="resultTitle" hidden>
+      <div class="result-content">
+        <div id="resultSymbol" class="result-symbol" aria-hidden="true">
+          <span id="resultCheck" class="result-check">✓</span>
+          <svg id="resultHourglass" class="result-hourglass" viewBox="0 0 125 137" xmlns="http://www.w3.org/2000/svg" hidden>
+            <defs>
+              <clipPath id="hourglassInside">
+                <path d="M32 24 H93 C93 48 76 57 63 68 C76 80 93 92 93 113 H32 C32 92 49 80 63 68 C49 57 32 48 32 24 Z" />
+              </clipPath>
+            </defs>
+            <path d="M32 24 H93 C93 48 76 57 63 68 C76 80 93 92 93 113 H32 C32 92 49 80 63 68 C49 57 32 48 32 24 Z" fill="#fffaf6" />
+            <g clip-path="url(#hourglassInside)">
+              <path d="M26 21 H100 V49 Q63 59 26 49 Z" fill="#f22957" />
+              <path d="M25 113 Q63 76 100 113 V123 H25 Z" fill="#ffc83d" />
+              <path d="M63 67 V84" fill="none" stroke="#ff4b00" stroke-width="3.5" stroke-linecap="round" />
+            </g>
+            <path d="M32 24 H93 C93 48 76 57 63 68 C76 80 93 92 93 113 H32 C32 92 49 80 63 68 C49 57 32 48 32 24 Z" fill="none" stroke="#3926ff" stroke-width="4.5" stroke-linejoin="round" />
+            <path d="M23 19 H102 M23 118 H102" fill="none" stroke="#3926ff" stroke-width="8" stroke-linecap="round" />
+          </svg>
+        </div>
+        <h1 id="resultTitle" tabindex="-1"></h1>
+        <p id="resultText"></p>
+      </div>
+    </section>
+  </main>
+
+  <div id="timer" class="timer" role="timer" aria-label="זמן שנותר" hidden>
+    <span class="timer-label">נותרו</span>
+    <output id="timerOutput" class="timer-output" dir="ltr">00:45</output>
+  </div>
+
+  <div id="detailOverlay" class="overlay" hidden>
+    <div id="detailShade" class="overlay-shade" aria-hidden="true"></div>
+    <section class="detail-sheet" role="dialog" aria-modal="true" aria-labelledby="detailTitle" aria-describedby="detailDescription">
+      <span class="sheet-handle" aria-hidden="true"></span>
+      <div id="detailVisual" class="detail-visual">
+        <img id="detailImage" src="" alt="">
+        <span class="image-fallback" aria-hidden="true">🍽️</span>
+        <button id="closeDetailButton" class="icon-close" type="button" aria-label="סגירת פרטי המנה">×</button>
+      </div>
+      <div class="detail-content">
+        <span id="detailTag" class="tag"></span>
+        <h2 id="detailTitle"></h2>
+        <p id="detailDescription"></p>
+        <div class="detail-actions">
+          <button id="chooseButton" class="btn btn-primary" type="button">בחר במנה זו</button>
+          <button id="backButton" class="btn btn-secondary" type="button">חזור לרשימה</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div id="confirmOverlay" class="overlay confirmation-overlay" hidden>
+    <div class="overlay-shade" aria-hidden="true"></div>
+    <section class="confirmation-card" role="dialog" aria-modal="true" aria-labelledby="confirmTitle" aria-describedby="confirmDescription">
+      <div class="confirm-icon" aria-hidden="true">?</div>
+      <span class="eyebrow">רגע לפני שמחליטים</span>
+      <h2 id="confirmTitle">זאת הבחירה הסופית שלך?</h2>
+      <p id="confirmDescription">יש עוד <strong id="unseenCount">0</strong> מנות שלא עברת עליהן.</p>
+      <div class="confirmation-actions">
+        <button id="confirmYesButton" class="btn btn-primary btn-block" type="button">סגור, נעול, נגעתי בארץ</button>
+        <button id="confirmNoButton" class="btn btn-secondary btn-block" type="button">רגע, אבדוק עוד מנות</button>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // משך המשחק בשניות. שינוי כאן יעדכן את הספירה לאחור (המסך הראשוני מיועד ל-45 שניות).
+    const TIMER_SECONDS = 45;
+    const TIMER_REVEAL_SECONDS = 15;
+
+    // כל המנות והתמונות מקומיות; אין קריאות לרשת או תלות בספריות חיצוניות.
+    const dishes = [
+      { id: 1, name: "סמאשבורגר על הפלנצ'ה", description: "קציצות בקר דקות עם קצוות צרובים ופריכים בתוך לחמנייה רכה, יחד עם ירקות ורוטב שמושך לעוד ביס.", tag: "להיט הבית", image: "./images/1.jpg" },
+      { id: 2, name: "המבורגר איטלקי מפנק", description: "קציצת בקר עסיסית עם טעמים איטלקיים, גבינה נמסה ותוספות עשירות בתוך לחמנייה קלויה.", tag: "מומלץ השף", image: "./images/2.jpg" },
+      { id: 3, name: "צ'יזבורגר טבעוני", description: "קציצה מן הצומח עם גבינה טבעונית, ירקות רעננים ורוטב עשיר. כל הכיף של המבורגר בלי מוצרים מן החי.", tag: "טבעוני", image: "./images/3.jpg" },
+      { id: 4, name: "המבורגר כמהין צרפתי", description: "קציצת בקר עם איולי כמהין, חזה אווז מעושן, פרמזן וגפרורי בטטה קריספיים. בורגר גורמה עם כל מה שאפשר לבקש.", tag: "מומלץ השף", image: "./images/4.jpg" },
+      { id: 5, name: "המבורגר רקלט נמסה", description: "קציצת בקר עשירה עם גבינת רקלט חמה שנמסה מעליה. שילוב מושחת של בשר וגבינה בכל ביס.", tag: "מושחת", image: "./images/5.jpg" },
+      { id: 6, name: "המבורגר טלה בסגנון צרפתי", description: "קציצת טלה מתובלת עם תוספות שמבליטות את הטעם העמוק של הבשר. בורגר קצת אחר מהרגיל.", tag: "מיוחד", image: "./images/6.jpg" },
+      { id: 7, name: "בורגר עוף סופר קריספי", description: "נתח עוף עבה במעטפת זהובה שמתפצחת בביס, עם ירקות ורוטב בתוך לחמנייה רכה.", tag: "קריספי", image: "./images/7.jpg" },
+      { id: 8, name: "בורגר עוף באפלו לוהט", description: "עוף פריך מצופה ברוטב באפלו פיקנטי בתוך לחמנייה רכה. חריפות וכיף בכל ביס.", tag: "חריף", image: "./images/8.jpg" },
+      { id: 9, name: "בורגר צ'דר וחלפיניו", description: "עוף קריספי, גבינת צ'דר קרמית וחלפיניו עם בעיטה קטנה. שילוב עשיר שמתחיל בפריך ונגמר בחריף.", tag: "פיקנטי", image: "./images/9.jpg" },
+      { id: 10, name: "בורגר עוף ודבש", description: "עוף מטוגן פריך בזיגוג דבש מתקתק, עם רוטב ולחמנייה רכה. מתוק, מלוח וממכר.", tag: "להיט הבית", image: "./images/10.jpg" },
+      { id: 11, name: "פיתה שווארמה פרגית", description: "פרגית לוהטת ומתובלת שנערמת בתוך פיתה עם ירקות ורטבים. ארוחת רחוב שמריחים מרחוק.", tag: "קלאסיקה", image: "./images/11.jpg" },
+      { id: 12, name: "פיצה פונגי כמהין", description: "בצק פיצה מהטאבון עם פטריות וניחוח כמהין עמוק. השוליים אווריריים והמרכז עשיר ומפנק.", tag: "מומלץ השף", image: "./images/12.jpg" },
+      { id: 13, name: "פיצה סטרצ'טלה חריפה", description: "פיצה לוהטת עם גבינת סטרצ'טלה רכה ונגיעות חריפות. פער מושלם בין גבינה עדינה לביס עם אופי.", tag: "חריף", image: "./images/13.jpg" },
+      { id: 14, name: "פסטת פסטו ובזיליקום", description: "פסטה טרייה בעבודת יד ברוטב שמנת ופסטו ירוק, עם פרמזן, שום ובזיליקום. קרמית וריחנית במיוחד.", tag: "צמחוני", image: "./images/14.jpg" },
+      { id: 15, name: "פיצה סנטוריני עם פטה ודבש", description: "פיצה לבנה עם מוצרלה, גבינת פטה, דבש ואורגנו יווני. שילוב מפתיע של מתוק ומלוח על בצק זהוב.", tag: "מיוחד", image: "./images/15.jpg" },
+      { id: 16, name: "פיצה צ'דר פיקנטית", description: "רוטב צ'דר עשיר, מוצרלה, פפרוני וחלפיניו על בצק קריספי. פיצה שמתחילה בגבינה ומסתיימת בחריפות נעימה.", tag: "פיקנטי", image: "./images/16.jpg" },
+      { id: 17, name: "פיצה בלקנית טבעונית", description: "פיצה עם פסטו עגבניות, גבינה טבעונית, ארטישוק ופלפל קלוי. צבעונית ומשביעה בלי רכיבים מן החי.", tag: "טבעוני", image: "./images/17.jpg" },
+      { id: 18, name: "פיצה ביאנקה כמהין", description: "פיצה לבנה עשירה עם קרם כמהין וגבינות נמסות, על בצק קריספי ואוורירי.", tag: "מושחת", image: "./images/18.jpg" },
+      { id: 19, name: "רגטוני שמנת כמהין", description: "צינורות פסטה שסופגים רוטב שמנת קטיפתי בניחוח כמהין. מנה עשירה שכיף לאסוף עד הטיפה האחרונה.", tag: "מומלץ השף", image: "./images/19.jpg" },
+      { id: 20, name: "ניוקי רוזה רכים", description: "כריות ניוקי רכות ברוטב שמנת ועגבניות עם פטריות, ערמונים ופרמזן. אוכל מנחם במיטבו.", tag: "צמחוני", image: "./images/20.jpg" },
+      { id: 21, name: "פיצה ארבע גבינות ופטריות", description: "בצק לוהט עם רוטב ארבע גבינות, פטריות טריות ושמן כמהין. עשירה, ריחנית ומושלמת לאוהבי גבינות.", tag: "מושחת", image: "./images/21.jpg" },
+      { id: 22, name: "פיצה טוסקנית טבעונית", description: "רוטב עגבניות, גבינה טבעונית, עגבניות מיובשות וארטישוק על בצק זהוב, עם פטרוזיליה טרייה מעל.", tag: "טבעוני", image: "./images/22.jpg" },
+      { id: 23, name: "פיצה קממבר ושרי", description: "פיצה ברוטב שמנת עם גבינת קממבר, פרמזן, עגבניות שרי, פלפל חריף ונגיעת בלסמי. כל משולש מרגיש כמו חגיגה.", tag: "מיוחד", image: "./images/23.jpg" },
+      { id: 24, name: "פסטת פקורינו ופלפל שחור", description: "פסטה טרייה עטופה ברוטב שמנת, פקורינו רומנו ופלפל שחור גרוס. שילוב איטלקי פשוט שמרגיש עשיר במיוחד.", tag: "מומלץ השף", image: "./images/24.jpg" },
+      { id: 25, name: "פסטת חמאת עגבניות ומסקרפונה", description: "פסטה טרייה ברוטב עגבניות תמר וחמאה, עם שום, בזיליקום וקציפת מסקרפונה שנמסה פנימה.", tag: "להיט הבית", image: "./images/25.jpg" },
+      { id: 26, name: "ספגטי שום וצ'ילי", description: "פסטה טרייה עם שמן זית, שום, צ'ילי חריף, פטרוזיליה והרבה פרמזן. חריפה, קלילה ומלאת אופי.", tag: "חריף", image: "./images/26.jpg" },
+      { id: 27, name: "פסטת גורגונזולה ולימון", description: "פסטה ברוטב חמאה וגבינה כחולה עם עירית, גרידת לימון ופרמזן טרי. קרמית עם טוויסט חמצמץ.", tag: "מיוחד", image: "./images/27.jpg" },
+      { id: 28, name: "ניוקי פטריות וכמהין", description: "כריות ניוקי רכות עם פטריות ברוטב שמנת פרמזן וכמהין. מנה מפנקת שקשה להפסיק לאכול.", tag: "מומלץ השף", image: "./images/28.jpg" },
+      { id: 29, name: "פסטה בטטה ופטה", description: "פסטה עם בטטה רכה, גבינת פטה, ארוגולה ופרמזן בנגיעת שמנת. שילוב של מתוק, מלוח ורענן.", tag: "צמחוני", image: "./images/29.jpg" },
+      { id: 30, name: "ספגטי בולונז טלה", description: "ספגטי ברוטב בולונז טלה עמוק עם מוצרלה ופקורינו. מנה חמימה שמבקשת עוד מזלג.", tag: "קלאסיקה", image: "./images/30.jpg" },
+      { id: 31, name: "אסאדו מפורק עם ערמונים", description: "בשר אסאדו שהתבשל עד שהוא מתפרק עם בצל, פטריות וערמונים. מוגש על אורז עם נגיעה פיקנטית.", tag: "מומלץ השף", image: "./images/31.jpg" },
+      { id: 32, name: "שניצל הבית הזהוב", description: "שניצל גדול במעטפת פריכה וזהובה, מוגש עם תוספת חמה לבחירה. קלאסיקה שעושה מצב רוח טוב.", tag: "קריספי", image: "./images/32.jpg" },
+      { id: 33, name: "עוף בקוקוס ובזיליקום", description: "נתחי עוף עם גזר, זוקיני ופטריות בקרם קוקוס ובזיליקום, לצד אורז. ארומטי ומעט פיקנטי.", tag: "פיקנטי", image: "./images/33.jpg" },
+      { id: 34, name: "סלמון במיסו וניוקי פריך", description: "פילה סלמון במיסו עם ניוקי קריספי, שעועית ירוקה וחציל קלוי. שילוב מדויק בין ים, ירקות וקראנץ'.", tag: "מומלץ השף", image: "./images/34.jpg" },
+      { id: 35, name: "אונטריב צלוי וניוקי קריספי", description: "קוביות אונטריב צלויות בטאבון ברוטב שזיפים וחמאה, מוגשות עם ניוקי פריך. עמוק, מתוק ומלוח.", tag: "מושחת", image: "./images/35.jpg" },
+      { id: 36, name: "עוף מדורה ברוזמרין ודבש", description: "כרע עוף במרינדת שום, רוזמרין, סויה ודבש, עם תפוחי אדמה, לאבנה ורוטב שום לימון.", tag: "קלאסיקה", image: "./images/36.jpg" },
+      { id: 37, name: "סלט ניסואז עם טונה וביצה", description: "סלט משביע של טונה, ביצה קשה, חציל קלוי, ירקות פריכים, צנוברים וטחינה עם סומק.", tag: "קלאסיקה", image: "./images/37.jpg" },
+      { id: 38, name: "סלט קינואה שחורה והדרים", description: "קינואה שחורה עם גזר מתובל, משמש מיובש, ירוקים, שקדים ופיסטוקים ברוטב הדרים רענן.", tag: "טבעוני", image: "./images/38.jpg" },
+      { id: 39, name: "סלט עוף וירקות קראנצ'י", description: "חזה עוף קר עם חסה, מלפפון טרי וחמוץ, בצל סגול ופלפל שיפקה ברוטב טרטורה עשיר.", tag: "מיוחד", image: "./images/39.jpg" },
+      { id: 40, name: "קאיסן ראמן פירות ים", description: "קערת ראמן עמוקה עם אטריות, ציר חם ופירות ים, בנגיעה חריפה ומלאת ניחוחות יפניים.", tag: "פיקנטי", image: "./images/40.jpg" },
+      { id: 41, name: "יאקי אודון רופונגי", description: "אטריות אודון עבות עם אנטריקוט פרוס דק, פטריות וברוקולי ברוטב סויה ומיסו מתקתק. כל ביס מלא מרקם.", tag: "להיט הבית", image: "./images/41.jpg" },
+      { id: 42, name: "רול סלמון יפני", description: "רול סושי מוקפד עם סלמון טרי, אורז מתובל ותוספות עדינות. מנה קטנה למראה עם טעם גדול.", tag: "קלאסיקה", image: "./images/42.jpg" },
+      { id: 43, name: "ביבימבאפ פרגית קוריאני", description: "קערת אורז קוריאנית עם פרגית צרובה, ירקות צבעוניים ורוטב שמעורר את כל הטעמים כשמערבבים.", tag: "מומלץ השף", image: "./images/43.jpg" },
+      { id: 44, name: "אטריות ג'אג'אנגמיון", description: "אטריות אודון עם פרגית, ירקות ורוטב שעועית שחורה עשיר ומבריק, לצד ביצה רכה. מנה קוריאנית מנחמת.", tag: "מיוחד", image: "./images/44.jpg" },
+      { id: 45, name: "גימבאפ טופו קריספי", description: "רול קוריאני צבעוני עם אורז, ירקות וטופו פריך. כל פרוסה משלבת רעננות וקראנץ'.", tag: "טבעוני", image: "./images/45.jpg" },
+      { id: 46, name: "רול סלמון אפוי", description: "סושי מושקע עם סלמון אפוי ותוספות מלאות טעם, מוגש כמו מנה קטנה של מסעדת שף.", tag: "מומלץ השף", image: "./images/46.jpg" },
+      { id: 47, name: "רול שירו טמפורה", description: "רול יפני עם קראנץ' של טמפורה ורוטב שמחבר הכול. פריך, עשיר ומפתיע.", tag: "קריספי", image: "./images/47.jpg" },
+      { id: 48, name: "קארי ירוק עם טופו", description: "טופו רך בתוך קארי ירוק ארומטי עם ירקות וחלב קוקוס. מנה טבעונית מחממת עם חריפות עדינה.", tag: "טבעוני", image: "./images/48.jpg" },
+      { id: 49, name: "סומו ראמן חריף", description: "קערה נדיבה של אטריות וציר יפני עשיר, עם תוספות מפנקות וחום פיקנטי שמתפתח בכל כפית.", tag: "חריף", image: "./images/49.jpg" },
+      { id: 50, name: "סושי סלמון ואיקורה", description: "רול סושי חגיגי עם סלמון ומעטפת ביצי דג כתומות. כל ביס מתפצפץ ומתמוסס.", tag: "מיוחד", image: "./images/50.jpg" },
+      { id: 51, name: "פו בו וייטנאמי", description: "מרק אטריות אורז ובקר בתוך ציר וייטנאמי מהביל עם עשבי תיבול טריים. קערה מלאה בניחוח.", tag: "קלאסיקה", image: "./images/51.jpg" },
+      { id: 52, name: "נודלס עוף סאטה", description: "אטריות מוקפצות עם עוף ורוטב סאטה אגוזי, סמיך וממכר. מנה שמחברת מתיקות, מליחות ועומק.", tag: "להיט הבית", image: "./images/52.jpg" },
+      { id: 53, name: "אטריות אורז עם בקר", description: "נתחי בקר עם אטריות אורז רכות וירקות מוקפצים על אש חזקה. רוטב עשיר עוטף את הכול.", tag: "מומלץ השף", image: "./images/53.jpg" },
+      { id: 54, name: "קונג פאו נודלס", description: "אטריות ביצים עם עוף, פלפל אדום, קשיו וצ'ילי ברוטב סויה כהה. מוקפץ לוהט עם חריפות מורגשת.", tag: "חריף", image: "./images/54.jpg" },
+      { id: 55, name: "רנדאנג בקר מלזי", description: "בקר רך בבישול ארוך עם תבלינים אסייתיים ורוטב סמיך ועשיר. מנה עמוקה שמתחננת לאורז בצד.", tag: "מומלץ השף", image: "./images/55.jpg" },
+      { id: 56, name: "שרימפס בלמון גראס", description: "שרימפס עסיסיים בתיבול למון גראס וניחוחות וייטנאמיים, עם רוטב רענן ובועט.", tag: "מיוחד", image: "./images/56.jpg" },
+      { id: 57, name: "פאד תאי עוף ותמרינדי", description: "אטריות אורז מוקפצות עם עוף, כרוב, גזר ובצל ירוק ברוטב תמרינדי, לצד בוטנים, כוסברה ונבטים.", tag: "להיט הבית", image: "./images/57.jpg" },
+      { id: 58, name: "סטייק מוקפץ בפלפל שחור", description: "נתחי בקר מוקפצים עם פלפלים, כרישה ובצל ברוטב פלפל שחור ומיסו, מוגשים על אורז חם.", tag: "פיקנטי", image: "./images/58.jpg" },
+      { id: 59, name: "שיפודי סלמון על אורז יפני", description: "שיפודי סלמון עם ברוקולי, פטריות ובצל ברוטב טארה מתקתק, על קערת אורז מאודה.", tag: "מיוחד", image: "./images/59.jpg" },
+      { id: 60, name: "באטר צ'יקן הודי", description: "נתחי עוף רכים ברוטב עגבניות, חמאה ותבלינים הודיים. קרמי, עשיר ומושלם לניגוב.", tag: "מומלץ השף", image: "./images/60.jpg" },
+      { id: 61, name: "פלאק פניר בתרד", description: "קוביות גבינת פניר רכות בתוך רוטב תרד ירוק ומתובל. מנה צמחונית הודית עם טעם עמוק.", tag: "צמחוני", image: "./images/61.jpg" },
+      { id: 62, name: "טיקה מסאלה עוף", description: "עוף צלוי בתוך רוטב מסאלה עשיר עם עגבניות ותבלינים ריחניים. בדיוק המנה שתרצו לאסוף עם נאן.", tag: "פיקנטי", image: "./images/62.jpg" },
+      { id: 63, name: "שיפודי עוף זפרני", description: "שיפודי עוף עסיסיים במרינדת פטרוזיליה, שום וצ'יפוטלה, צלויים עד שהם שחומים וריחניים.", tag: "מיוחד", image: "./images/63.jpg" },
+      { id: 64, name: "צ'אנה מסאלה חומוס", description: "גרגירי חומוס ברוטב מסאלה מתובל עם עגבניות ועשבי תיבול. מנה טבעונית משביעה וריחנית.", tag: "טבעוני", image: "./images/64.jpg" },
+      { id: 65, name: "וינדאלו עוף חריף", description: "עוף רך ברוטב קארי עם צ'ילי וג'ינג'ר, מלא תבלינים וחום. מנה הודית למי שאוהב חריף באמת.", tag: "חריף", image: "./images/65.jpg" },
+      { id: 66, name: "ביריאני טלה וזעפרן", description: "אורז בסמטי מתובל בזעפרן ובתבלינים הודיים, מבושל עם קוביות טלה עסיסיות. ארוחה שלמה בקערה.", tag: "מומלץ השף", image: "./images/66.jpg" },
+      { id: 67, name: "קארי ירוק טופו וחצילים", description: "טופו טרי עם חצילים, קישואים וברוקולי בקרם קוקוס וקארי ירוק חריף, עם בוטנים קלויים.", tag: "טבעוני", image: "./images/67.jpg" },
+      { id: 68, name: "בוריטו קרניטס", description: "טורטייה גדולה עם כתף חזיר בבישול ארוך, אורז, שעועית, סלסה ואננס. טעם מקסיקני עשיר בכל ביס.", tag: "להיט הבית", image: "./images/68.jpg" },
+      { id: 69, name: "קסדייה פטריות טבעונית", description: "טורטייה צרובה במילוי פטריות מתובלות ותוספות טבעוניות, עם שוליים פריכים ומרכז רך.", tag: "טבעוני", image: "./images/69.jpg" },
+      { id: 70, name: "בוריטו שרימפס חריף", description: "שרימפס עסיסיים עטופים בטורטייה עם אורז, ירקות וסלסה פיקנטית. ארוחה מקסיקנית שלא נשארת אדישה.", tag: "חריף", image: "./images/70.jpg" },
+      { id: 71, name: "בוריטו דג פריך וסלסה", description: "דג קוד בבלילת בירה פריכה עם אורז, כרוב, פיקו דה גאיו, טרטר מקסיקני וסלסה ירוקה בתוך טורטייה.", tag: "קריספי", image: "./images/71.jpg" },
+      { id: 72, name: "בוריטו לחי עגל בבישול ארוך", description: "לחי עגל רכה בטורטייה עם אורז, שעועית, פיקו דה גאיו, גבינה, שמנת חמוצה וסלסה אדומה.", tag: "מומלץ השף", image: "./images/72.jpg" },
+      { id: 73, name: "בוריטו סטייק טבעוני וטקילה", description: "נתחי חלבון מהצומח במרינדת טקילה וליים עם אורז, שעועית, סלסה, גבינה טבעונית וירקות.", tag: "טבעוני", image: "./images/73.jpg" },
+      { id: 74, name: "חומוס חם עם שייטל", description: "צלחת חומוס חלקה עם בשר שייטל מוקפץ ותיבול עשיר. פיתה טרייה ליד היא כל מה שצריך.", tag: "מומלץ השף", image: "./images/74.jpg" },
+      { id: 75, name: "חמשוקה במחבת", description: "חומוס ושקשוקה נפגשים בצלחת אחת עם רוטב עגבניות חם וביצים רכות. שילוב ישראלי מנצח.", tag: "צמחוני", image: "./images/75.jpg" },
+      { id: 76, name: "פיתה פלאפל וטחינה", description: "כדורי פלאפל פריכים עם סלט קצוץ וטחינה בתוך פיתה רכה. ביס רחוב קלאסי ומשביע.", tag: "טבעוני", image: "./images/76.jpg" },
+      { id: 77, name: "סמבוסק סביח יפואי", description: "מאפה שמרים זהוב וגדוש בטעמי סביח, עם חציל ותוספות שמזכירות את הפיתה האהובה.", tag: "מיוחד", image: "./images/77.jpg" },
+      { id: 78, name: "סמבוסק ביצה, פטריות ותפוח אדמה", description: "מאפה זהוב ונדיב במילוי תפוחי אדמה, ביצה קשה, פטריות וגבינה נמסה. ארוחה חמה שאוכלים בידיים.", tag: "להיט הבית", image: "./images/78.jpg" },
+      { id: 79, name: "פיתה פרגית צרובה", description: "נתחי פרגית לוהטים בתוך פיתה חמה, עם סלטים וממרחים לבחירה. ביס עסיסי של אוכל רחוב.", tag: "להיט הבית", image: "./images/79.jpg" },
+      { id: 80, name: "חומוס עם פטריות חמות", description: "חומוס חלק וטרי שמעליו פטריות חמות ומתובלות. מנה צמחונית משביעה שמנגבים עד הסוף.", tag: "צמחוני", image: "./images/80.jpg" }
+    ];
+
+    const $ = (id) => document.getElementById(id);
+    const tagClasses = {
+      "טבעוני": "vegan",
+      "צמחוני": "vegetarian",
+      "חריף": "spicy",
+      "פיקנטי": "piquant",
+      "מומלץ השף": "chef",
+      "להיט הבית": "hit",
+      "קריספי": "crispy",
+      "קלאסיקה": "classic",
+      "מיוחד": "special",
+      "מושחת": "indulgent"
+    };
+    const tagClass = (tag) => `tag tag--${tagClasses[tag] || "classic"}`;
+    const introScreen = $("introScreen");
+    const menuScreen = $("menuScreen");
+    const resultScreen = $("resultScreen");
+    const detailOverlay = $("detailOverlay");
+    const confirmOverlay = $("confirmOverlay");
+    const timer = $("timer");
+    const viewedDishIds = new Set();
+
+    let phase = "intro"; // intro | playing | finished
+    let deadline = null;
+    let intervalId = null;
+    let activeDish = null;
+    let activeCard = null;
+
+    function createDishCard(dish) {
+      const card = document.createElement("button");
+      card.type = "button";
+      card.className = "dish-card";
+      card.setAttribute("aria-label", `לפרטים על ${dish.name}`);
+
+      const content = document.createElement("span");
+      content.className = "dish-card__body";
+      const title = document.createElement("span");
+      title.className = "dish-card__name";
+      title.textContent = dish.name;
+      const tag = document.createElement("span");
+      tag.className = tagClass(dish.tag);
+      tag.textContent = dish.tag;
+      content.append(title, tag);
+
+      const chevron = document.createElement("span");
+      chevron.className = "card-chevron";
+      chevron.textContent = "‹";
+      chevron.setAttribute("aria-hidden", "true");
+      card.append(content, chevron);
+      card.addEventListener("click", () => { activeCard = card; openDish(dish); });
+      return card;
+    }
+
+    function renderDishes() {
+      const fragment = document.createDocumentFragment();
+      dishes.forEach((dish) => fragment.appendChild(createDishCard(dish)));
+      $("dishList").replaceChildren(fragment);
+    }
+
+    function syncOverlayAccessibility() {
+      const isOverlayOpen = !detailOverlay.hidden || !confirmOverlay.hidden;
+      document.body.classList.toggle("has-overlay", isOverlayOpen);
+      menuScreen.inert = isOverlayOpen;
+    }
+
+    function showMenuFocus() {
+      syncOverlayAccessibility();
+      if (activeCard && activeCard.isConnected) activeCard.focus({ preventScroll: true });
+      else $("menuTitle").focus({ preventScroll: true });
+    }
+
+    function hasTimeExpired() {
+      if (phase !== "playing") return true;
+      if (Date.now() >= deadline) { finishWithoutChoice(); return true; }
+      return false;
+    }
+
+    function openDish(dish) {
+      if (hasTimeExpired()) return;
+      activeDish = dish;
+      viewedDishIds.add(dish.id); // מנה נחשבת כנצפתה רק כשפותחים את הפירוט שלה.
+      $("detailTag").textContent = dish.tag;
+      $("detailTag").className = tagClass(dish.tag);
+      $("detailTitle").textContent = dish.name;
+      $("detailDescription").textContent = dish.description;
+      const visual = $("detailVisual");
+      const image = $("detailImage");
+      visual.classList.remove("is-missing");
+      image.hidden = false;
+      image.alt = dish.name;
+      image.src = dish.image;
+      detailOverlay.hidden = false;
+      syncOverlayAccessibility();
+      $("closeDetailButton").focus({ preventScroll: true });
+    }
+
+    function closeDish() {
+      if (detailOverlay.hidden || phase !== "playing") return;
+      detailOverlay.hidden = true;
+      showMenuFocus();
+    }
+
+    function requestChoice() {
+      if (hasTimeExpired() || !activeDish) return;
+      detailOverlay.hidden = true;
+      const unseen = dishes.length - viewedDishIds.size;
+      $("unseenCount").textContent = String(unseen);
+      confirmOverlay.hidden = false;
+      syncOverlayAccessibility();
+      $("confirmNoButton").focus({ preventScroll: true });
+    }
+
+    function continueBrowsing() {
+      if (hasTimeExpired()) return;
+      confirmOverlay.hidden = true;
+      showMenuFocus();
+    }
+
+    function endGame(chosenDish = null) {
+      if (phase !== "playing") return;
+      phase = "finished";
+      window.clearInterval(intervalId);
+      intervalId = null;
+      detailOverlay.hidden = true;
+      confirmOverlay.hidden = true;
+      introScreen.hidden = true;
+      menuScreen.hidden = true;
+      menuScreen.inert = false;
+      document.body.classList.remove("has-overlay");
+      timer.hidden = true;
+      resultScreen.hidden = false;
+      $("resultCheck").hidden = !chosenDish;
+      $("resultHourglass").toggleAttribute("hidden", Boolean(chosenDish));
+      if (chosenDish) {
+        $("resultTitle").textContent = "הבחירה נקלטה!";
+        $("resultText").textContent = `בחרת ב-${chosenDish.name}`;
+      } else {
+        $("resultTitle").textContent = "נגמר הזמן!";
+        $("resultText").textContent = "לא הספקת לבחור מנה :(";
+      }
+      window.scrollTo({ top: 0, behavior: "instant" });
+      $("resultTitle").focus({ preventScroll: true });
+    }
+
+    function finishWithoutChoice() { endGame(null); }
+
+    function confirmChoice() {
+      // אם חלפו 45 שניות בזמן שהמשתמש היה בפופאפ, הבחירה כבר אינה תקפה.
+      if (hasTimeExpired() || !activeDish) return;
+      endGame(activeDish);
+    }
+
+    function tick() {
+      if (phase !== "playing") return;
+      const millisecondsLeft = Math.max(0, deadline - Date.now());
+      const secondsLeft = Math.ceil(millisecondsLeft / 1000);
+      $("timerOutput").textContent = `00:${String(secondsLeft).padStart(2, "0")}`;
+      timer.hidden = secondsLeft > TIMER_REVEAL_SECONDS;
+      timer.classList.toggle("urgent", secondsLeft <= 10);
+      if (millisecondsLeft === 0) finishWithoutChoice();
+    }
+
+    function startGame() {
+      if (phase !== "intro") return;
+      phase = "playing";
+      introScreen.hidden = true;
+      menuScreen.hidden = false;
+      timer.hidden = true;
+      deadline = Date.now() + TIMER_SECONDS * 1000;
+      renderDishes();
+      window.scrollTo({ top: 0, behavior: "instant" });
+      tick();
+      intervalId = window.setInterval(tick, 100);
+      $("menuTitle").focus({ preventScroll: true });
+    }
+
+    // שומרים על פוקוס בתוך החלונית הפעילה גם בניווט מקלדת.
+    document.addEventListener("keydown", (event) => {
+      if (phase !== "playing") return;
+      const overlay = !confirmOverlay.hidden ? confirmOverlay : (!detailOverlay.hidden ? detailOverlay : null);
+      if (!overlay) return;
+      if (event.key === "Escape") {
+        event.preventDefault();
+        if (overlay === confirmOverlay) continueBrowsing();
+        else closeDish();
+        return;
+      }
+      if (event.key !== "Tab") return;
+      const focusable = [...overlay.querySelectorAll("button:not([disabled])")];
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (!first) return;
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    });
+
+    $("detailImage").addEventListener("error", () => {
+      $("detailImage").hidden = true;
+      $("detailVisual").classList.add("is-missing");
+    });
+    $("startButton").addEventListener("click", startGame);
+    $("closeDetailButton").addEventListener("click", closeDish);
+    $("detailShade").addEventListener("click", closeDish);
+    $("backButton").addEventListener("click", closeDish);
+    $("chooseButton").addEventListener("click", requestChoice);
+    $("confirmNoButton").addEventListener("click", continueBrowsing);
+    $("confirmYesButton").addEventListener("click", confirmChoice);
+    document.addEventListener("visibilitychange", () => { if (!document.hidden) tick(); });
+    window.addEventListener("focus", tick);
+    window.addEventListener("pageshow", tick);
+  </script>
+</body>
+</html>
