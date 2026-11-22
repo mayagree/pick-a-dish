@@ -65,7 +65,7 @@
     .intro-title .title-blue { color: #3926ff; }
     .intro-scribble { display: block; width: 120px; height: 62px; margin: 13px 0 12px; fill: none; stroke: #3926ff; stroke-linecap: round; stroke-width: 2.1; }
     .intro-description { color: #242127; font-size: clamp(1.05rem, 4.55vw, 1.23rem); line-height: 1.43; max-width: 450px; margin: 0; }
-    .intro-description strong { color: #3926ff; font-family: "Heebo", Arial, sans-serif; font-weight: 900; }
+    .intro-description strong { color: #3926ff; font-family: "Heebo", Arial, sans-serif; font-weight: 900; white-space: nowrap; }
     .intro-actions { margin-top: auto; padding-top: 14px; }
     .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 54px; padding: 13px 19px; border: 0; border-radius: 14px; font-size: 1.08rem; font-weight: 800; transition: background .15s ease, transform .15s ease; }
     .btn:active { transform: scale(.985); }
@@ -119,7 +119,10 @@
     .sheet-handle { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); width: 39px; height: 5px; border-radius: 99px; background: #ffffffd8; z-index: 1; box-shadow: 0 1px 3px #0002; }
     .detail-visual { width: 100%; height: clamp(210px, 32dvh, 290px); position: relative; display: grid; place-items: center; background: #edf2f1; overflow: hidden; }
     .detail-visual img { width: 100%; height: 100%; object-fit: cover; }
-    .detail-visual .image-fallback { font-size: 5rem; }
+    .detail-visual .image-fallback { display: none; font-size: 5rem; }
+    .detail-visual.is-missing .image-fallback { display: block; }
+    .detail-visual.is-loading::after { content: ""; position: absolute; width: 28px; height: 28px; border: 3px solid #d6d1ff; border-top-color: #3926ff; border-radius: 50%; animation: image-loading .7s linear infinite; }
+    @keyframes image-loading { to { transform: rotate(360deg); } }
     .icon-close { position: absolute; top: 18px; right: 17px; width: 37px; height: 37px; display: grid; place-items: center; border: 0; border-radius: 50%; background: #fffffff0; color: #172231; font-size: 1.5rem; line-height: 1; box-shadow: 0 2px 8px #1112; }
     .detail-content { padding: 24px 23px max(20px, env(safe-area-inset-bottom)); }
     .detail-content h2 { margin: 13px 0 12px; font-size: clamp(1.7rem, 7vw, 2rem); line-height: 1.14; letter-spacing: -.035em; }
@@ -392,6 +395,7 @@
     let intervalId = null;
     let activeDish = null;
     let activeCard = null;
+    let imageRequestId = 0;
 
     function createDishCard(dish) {
       const card = document.createElement("button");
@@ -452,23 +456,41 @@
       $("detailDescription").textContent = dish.description;
       const visual = $("detailVisual");
       const image = $("detailImage");
+      const currentRequestId = ++imageRequestId;
       visual.classList.remove("is-missing");
-      image.hidden = false;
+      visual.classList.add("is-loading");
+      image.hidden = true;
       image.alt = dish.name;
-      image.src = dish.image;
       detailOverlay.hidden = false;
       syncOverlayAccessibility();
       $("closeDetailButton").focus({ preventScroll: true });
+
+      // התמונה הקודמת מוסתרת מיד. רק תמונה שסיימה להיטען למנה הנוכחית תוצג.
+      const pendingImage = new Image();
+      pendingImage.onload = () => {
+        if (currentRequestId !== imageRequestId || phase !== "playing" || detailOverlay.hidden) return;
+        image.src = dish.image;
+        image.hidden = false;
+        visual.classList.remove("is-loading");
+      };
+      pendingImage.onerror = () => {
+        if (currentRequestId !== imageRequestId || phase !== "playing" || detailOverlay.hidden) return;
+        visual.classList.remove("is-loading");
+        visual.classList.add("is-missing");
+      };
+      pendingImage.src = dish.image;
     }
 
     function closeDish() {
       if (detailOverlay.hidden || phase !== "playing") return;
+      imageRequestId += 1;
       detailOverlay.hidden = true;
       showMenuFocus();
     }
 
     function requestChoice() {
       if (hasTimeExpired() || !activeDish) return;
+      imageRequestId += 1;
       detailOverlay.hidden = true;
       const unseen = dishes.length - viewedDishIds.size;
       $("unseenCount").textContent = String(unseen);
@@ -485,6 +507,7 @@
 
     function endGame(chosenDish = null) {
       if (phase !== "playing") return;
+      imageRequestId += 1;
       phase = "finished";
       window.clearInterval(intervalId);
       intervalId = null;
