@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#ff4b00">
-  <meta name="description" content="מתוך כל האפשרויות בוחרים רק מנה אחת. כדאי לבחור בקפידה, כי הבחירה סופית.">
+  <meta name="description" content="מתוך כל האפשרויות, רק מנה אחת. כדאי לבחור בקפידה, הבחירה סופית.">
   <title>מה בא לך לאכול?</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700;800&family=Heebo:wght@500;600;700;800;900&display=swap');
@@ -65,6 +65,7 @@
     .intro-title .title-blue { color: #3926ff; }
     .intro-scribble { display: block; width: 120px; height: 62px; margin: 13px 0 12px; fill: none; stroke: #3926ff; stroke-linecap: round; stroke-width: 2.1; }
     .intro-description { color: #242127; font-size: clamp(1.05rem, 4.55vw, 1.23rem); line-height: 1.43; max-width: 450px; margin: 0; }
+    .intro-description > span { display: block; }
     .intro-description strong { color: #3926ff; font-family: "Heebo", Arial, sans-serif; font-weight: 900; white-space: nowrap; }
     .intro-actions { margin-top: auto; padding-top: 14px; }
     .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 54px; padding: 13px 19px; border: 0; border-radius: 14px; font-size: 1.08rem; font-weight: 800; transition: background .15s ease, transform .15s ease; }
@@ -194,7 +195,7 @@
           <svg class="intro-scribble" viewBox="0 0 120 62" aria-hidden="true">
             <path d="M3 42 C17 12, 30 9, 35 32 S26 65, 49 48 S60 2, 73 26 S82 57, 99 35 S108 20, 117 31"></path>
           </svg>
-          <p class="intro-description">מתוך כל האפשרויות, אפשר לבחור <strong>רק מנה אחת</strong>. כדאי לבחור בקפידה, כי הבחירה סופית.</p>
+          <p class="intro-description"><span>מתוך כל האפשרויות, <strong>רק מנה אחת</strong>.</span><span>כדאי לבחור בקפידה, הבחירה סופית.</span></p>
         </div>
         <div class="intro-actions">
           <button id="startButton" class="btn btn-primary btn-block" type="button">התחל</button>
