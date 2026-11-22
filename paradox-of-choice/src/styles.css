@@ -1,0 +1,246 @@
+/* ==========================================================================
+   Paradox of Choice — design system
+   1920×1080 fixed canvas, scaled to fit. All layout in canvas pixels.
+   ========================================================================== */
+:root {
+  --orange: #FF4500;
+  --yellow: #FFC233;
+  --pink: #EF3054;
+  --blue: #3928FF;
+  --grey: #CDD0D6;
+  --black: #101010;
+  --white: #FFFFFF;
+  --f-display: 'Heebo', 'Arial Hebrew', 'Rubik', system-ui, sans-serif;
+  --f-serif: 'Frank Ruhl Libre', 'Times New Roman', serif;
+  --f-mono: 'IBM Plex Mono', 'Heebo', ui-monospace, Menlo, monospace;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { margin: 0; width: 100%; height: 100%; background: #0a0a0a; overflow: hidden; }
+body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+body.hide-cursor, body.hide-cursor * { cursor: none !important; }
+
+.viewport { position: fixed; inset: 0; background: #0a0a0a; overflow: hidden; }
+.stage {
+  position: absolute; left: 50%; top: 50%;
+  width: 1920px; height: 1080px;
+  transform-origin: 50% 50%;
+  overflow: hidden;
+  font-family: var(--f-display);
+  direction: rtl;
+  color: var(--black);
+  background: var(--orange);
+}
+
+.slide { position: absolute; inset: 0; overflow: hidden; }
+.abs { position: absolute; }
+.ltr { direction: ltr; unicode-bidi: isolate; }
+.rtl { direction: rtl; }
+
+/* ---------- typography primitives ---------- */
+.word { display: inline-block; white-space: nowrap; }
+.ch { display: inline-block; will-change: transform; }
+.mask { display: block; overflow: hidden; padding: 0.12em 0 0.16em; margin: -0.12em 0 -0.16em; }
+.mask.inline { display: inline-block; vertical-align: top; }
+.mask > .mi { display: block; will-change: transform; }
+.mask.inline > .mi { display: inline-block; }
+
+.pill {
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 999px; white-space: nowrap; line-height: 1;
+}
+.pill-serif {
+  font-family: var(--f-serif); font-weight: 500; font-size: 44px;
+  padding: 14px 34px 20px; background: var(--yellow); color: var(--orange);
+}
+.micro {
+  font-family: var(--f-mono); font-size: 15px; font-weight: 500;
+  letter-spacing: 0.04em; text-transform: uppercase; line-height: 1.35;
+}
+.micro[dir="rtl"], .micro.he { letter-spacing: 0; font-family: var(--f-display); font-weight: 600; font-size: 17px; }
+
+.shape { position: absolute; display: block; overflow: visible; }
+.outline-text { color: transparent; -webkit-text-stroke: 3px var(--black); }
+
+/* ---------- chrome: footer + counter ---------- */
+.chrome {
+  position: absolute; left: 80px; right: 80px; bottom: 30px; height: 24px;
+  display: flex; align-items: center; justify-content: space-between;
+  pointer-events: none; z-index: 40;
+}
+.chrome .c-title { font-weight: 700; font-size: 17px; }
+.chrome .c-mid { font-family: var(--f-mono); font-size: 13px; letter-spacing: 0.06em; }
+.chrome .c-count { font-family: var(--f-mono); font-size: 15px; font-weight: 600; letter-spacing: 0.04em; direction: ltr; display: inline-flex; gap: 6px; }
+.chrome .c-num { display: inline-block; overflow: hidden; height: 20px; }
+.chrome .c-num > span { display: block; animation: roll .6s cubic-bezier(.72,0,.16,1) .15s both; }
+@keyframes roll { from { transform: translateY(100%); } to { transform: none; } }
+
+.overlay { position: absolute; inset: 0; z-index: 60; pointer-events: none; }
+.overlay > div { position: absolute; will-change: transform; }
+
+.standby {
+  position: absolute; z-index: 70; left: 50%; bottom: 46px; transform: translateX(-50%);
+  font-family: var(--f-mono); font-size: 14px; letter-spacing: 0.08em; color: rgba(16,16,16,.55);
+  display: flex; gap: 14px; align-items: center; direction: ltr;
+}
+.standby .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--black); animation: blink 1.4s infinite; }
+@keyframes blink { 50% { opacity: .15; } }
+
+.help {
+  position: absolute; z-index: 80; top: 60px; left: 60px; width: 560px;
+  background: var(--black); color: var(--grey); border-radius: 28px; padding: 36px 40px;
+  font-size: 22px; line-height: 1.7; direction: rtl;
+}
+.help h3 { margin: 0 0 10px; font-size: 30px; color: var(--yellow); font-weight: 900; }
+.help kbd { font-family: var(--f-mono); font-size: 17px; background: #2a2a2a; color: #fff; padding: 2px 9px; border-radius: 8px; margin-left: 6px; direction: ltr; display: inline-block; }
+
+/* ==========================================================================
+   SLIDE 01 — opening
+   ========================================================================== */
+.s01 { background: var(--orange); }
+.s01 .row { position: absolute; left: 70px; right: 70px; display: flex; align-items: center; gap: 30px; }
+.s01 .big, .s10 .big {
+  font-weight: 900; font-size: 392px; line-height: 0.8; color: var(--grey);
+  white-space: nowrap; letter-spacing: -0.012em; flex: none; position: relative;
+}
+.fillpill { flex: 1 1 auto; height: 262px; border-radius: 999px; display: flex; align-items: center; justify-content: center; overflow: hidden; min-width: 120px; }
+.s01 .ghost, .s10 .ghost {
+  position: absolute; left: 0; white-space: nowrap; font-weight: 900; font-size: 330px; line-height: 1;
+  color: transparent; -webkit-text-stroke: 3px var(--black); direction: rtl;
+}
+.s01 .xp { font-family: var(--f-display); font-weight: 700; font-size: 30px; padding: 12px 26px 15px; }
+
+/* ==========================================================================
+   SLIDE 02 — the menu, exploded
+   ========================================================================== */
+.s02 { background: var(--yellow); }
+.s02 .field { position: absolute; inset: 0; }
+.s02 .mrow { position: absolute; left: -700px; display: flex; align-items: center; gap: 26px; white-space: nowrap; height: 120px; }
+.s02 .it { display: inline-flex; align-items: center; flex: none; }
+.s02 .it.w { font-weight: 800; color: var(--black); line-height: 1; }
+.s02 .it.p { border-radius: 999px; padding: 10px 24px 13px; font-weight: 700; line-height: 1; }
+.s02 .it.n { font-family: var(--f-mono); font-weight: 600; color: var(--black); direction: ltr; }
+.s02 .it.o { font-weight: 900; color: transparent; -webkit-text-stroke: 2px var(--black); line-height: 1; }
+.s02 .mcol { position: absolute; top: -600px; width: 150px; display: flex; flex-direction: column; align-items: center; gap: 18px; }
+.s02 .band { position: absolute; left: 0; right: 0; top: 300px; height: 480px; background: var(--black); }
+.s02 .hl { position: absolute; right: 110px; top: 342px; color: var(--yellow); font-weight: 900; font-size: 172px; line-height: 0.9; }
+.s02 .sp { font-weight: 700; font-size: 40px; padding: 14px 32px 18px; }
+
+/* ==========================================================================
+   SLIDE 03 — definition
+   ========================================================================== */
+.s03 { background: var(--white); }
+.s03 .def { position: absolute; right: 110px; top: 290px; width: 1720px; font-weight: 800; font-size: 104px; line-height: 1.1; letter-spacing: -0.01em; }
+.s03 .hlw { position: relative; display: inline-block; padding: 0 0.12em; margin: 0 -0.04em; }
+.s03 .hlw > .bg { position: absolute; left: 0; right: 0; top: 0.12em; bottom: 0.02em; border-radius: 999px; z-index: 0; }
+.s03 .hlw > .tx { position: relative; z-index: 1; }
+.s03 .soft { font-family: var(--f-serif); font-weight: 500; color: var(--orange); }
+.s03 .cl { position: absolute; font-weight: 800; white-space: nowrap; }
+
+/* ==========================================================================
+   SLIDE 04 — editorial spread
+   ========================================================================== */
+.s04 { background: var(--grey); }
+.s04 .y2004 { position: absolute; left: 40px; top: 220px; font-weight: 900; font-size: 480px; line-height: 0.8; color: var(--orange); letter-spacing: -0.045em; white-space: nowrap; }
+.s04 .dg { display: inline-block; }
+.s04 .col { position: absolute; right: 90px; top: 96px; width: 660px; }
+.s04 .name { font-weight: 900; font-size: 196px; line-height: 0.84; letter-spacing: -0.015em; }
+.s04 .para { font-size: 29px; line-height: 1.45; font-weight: 400; }
+.s04 .note { font-size: 21px; line-height: 1.45; border-top: 3px solid var(--black); padding-top: 14px; }
+.s04 .book-wrap { position: absolute; left: 600px; top: 520px; perspective: 1400px; }
+.s04 .book {
+  width: 330px; height: 450px; background: var(--yellow); border-radius: 6px 14px 14px 6px; position: relative;
+  box-shadow: 18px 18px 0 var(--black); transform-origin: 0% 50%; overflow: hidden;
+}
+
+/* ==========================================================================
+   SLIDE 05 — three effects
+   ========================================================================== */
+.s05 { background: var(--white); color: var(--black); }
+.s05 .hd { color: var(--orange); }
+.s05 .colx { position: absolute; top: 262px; width: 568px; height: 728px; }
+.s05 .frame { position: absolute; inset: 0; border: 2px solid var(--grey); border-radius: 34px; }
+.s05 .ghostnum { position: absolute; right: 36px; top: 26px; font-weight: 900; font-size: 140px; line-height: 0.8; color: transparent; -webkit-text-stroke: 2px var(--grey); direction: ltr; }
+.s05 .fill { position: absolute; inset: 0; border-radius: 34px; overflow: hidden; }
+.s05 .num { position: absolute; right: 36px; top: 26px; font-weight: 900; font-size: 140px; line-height: 0.8; direction: ltr; }
+.s05 .ttl { position: absolute; right: 36px; top: 170px; font-weight: 900; font-size: 84px; line-height: 0.95; }
+.s05 .cap { position: absolute; right: 36px; left: 36px; top: 566px; font-size: 31px; line-height: 1.3; font-weight: 600; }
+.s05 .en { position: absolute; left: 36px; bottom: 30px; }
+
+/* ==========================================================================
+   SLIDE 06 — before / after
+   ========================================================================== */
+.s06 { background: var(--blue); color: var(--white); }
+.s06 .card { position: absolute; left: 80px; top: 130px; width: 1060px; height: 820px; background: var(--white); border-radius: 30px; overflow: hidden; color: var(--black); }
+.s06 .ui { position: absolute; left: 0; top: 0; display: flex; align-items: center; justify-content: center; white-space: nowrap; border: 2px solid transparent; line-height: 1; padding: 0 18px; overflow: hidden; }
+.s06 .ui.dish { justify-content: space-between; gap: 10px; }
+.s06 .ui.dish .pr { font-family: var(--f-mono); font-size: 0.82em; direction: ltr; }
+.s06 .ui.t-right { justify-content: flex-start; } /* RTL start = right */
+.s06 .gridline { position: absolute; top: 0; bottom: 0; width: 0; border-left: 2px dashed var(--blue); opacity: 0; }
+.s06 .tag { font-size: 26px; font-weight: 700; padding: 12px 24px 15px; }
+
+/* ==========================================================================
+   SLIDE 07 — principles
+   ========================================================================== */
+.s07 { background: var(--white); }
+.s07 .panel { position: absolute; top: 300px; width: 560px; height: 690px; }
+.s07 .rule { position: absolute; top: 300px; width: 3px; height: 690px; background: var(--black); transform-origin: 50% 0; }
+.s07 .pnum { font-weight: 900; font-size: 120px; line-height: 0.8; direction: ltr; text-align: right; }
+.s07 .pterm { font-weight: 900; font-size: 58px; line-height: 1; margin-top: 22px; }
+.s07 .pdesc { font-weight: 500; font-size: 32px; line-height: 1.25; margin-top: 12px; }
+.s07 .demo { position: absolute; left: 0; right: 0; top: 400px; height: 290px; }
+.s07 .db { position: absolute; left: 0; top: 0; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 26px; color: var(--white); white-space: nowrap; overflow: hidden; }
+
+/* ==========================================================================
+   SLIDE 08 — expressive complexity
+   ========================================================================== */
+.s08 { background: var(--yellow); }
+.s08 .poster { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; background: var(--pink); overflow: hidden; transform-origin: 0 0; }
+.s08 .gw { position: absolute; font-weight: 900; line-height: 0.8; white-space: nowrap; }
+
+/* ==========================================================================
+   SLIDE 09 — the takeaway
+   ========================================================================== */
+.s09 { background: var(--white); color: var(--black); }
+.s09 .hl { color: var(--blue); }
+.s09 .mrow { position: absolute; left: -200px; display: flex; gap: 0.35em; white-space: nowrap; align-items: center; font-weight: 900; }
+.s09 .m { display: inline-block; color: var(--blue); }
+.s09 .m.o { color: var(--orange); }
+.s09 .m.s { color: transparent; -webkit-text-stroke: 2px var(--pink); }
+
+/* ==========================================================================
+   SLIDE 10 — thank you
+   ========================================================================== */
+.s10 { background: var(--orange); }
+.s10 .row { position: absolute; left: 70px; right: 70px; display: flex; align-items: center; gap: 30px; }
+.s10 .echo { position: absolute; inset: 0; color: var(--pink); }
+.s10 .echo .big { color: var(--pink); }
+
+/* ==========================================================================
+   PRESENTER VIEW
+   ========================================================================== */
+body:has(.presenter) { overflow: auto; }
+.presenter { min-height: 100vh; background: #101010; color: #e9eaee; font-family: var(--f-display); display: flex; flex-direction: column; }
+.presenter header { display: flex; align-items: center; gap: 28px; padding: 22px 32px; border-bottom: 1px solid #2a2a2a; }
+.pv-num { font-weight: 900; font-size: 64px; color: var(--orange); line-height: 1; }
+.pv-num small { font-size: 22px; color: #777; margin-left: 4px; }
+.pv-title { flex: 1; }
+.pv-k { font-family: var(--f-mono); font-size: 13px; color: #8a8a8a; }
+.pv-t { font-weight: 800; font-size: 30px; margin-top: 4px; }
+.pv-steps { display: flex; align-items: center; gap: 8px; margin-top: 10px; }
+.pv-steps span { width: 34px; height: 12px; border-radius: 999px; border: 2px solid var(--yellow); }
+.pv-steps span.on { background: var(--yellow); }
+.pv-steps em { font-style: normal; font-size: 15px; color: var(--yellow); margin-right: 8px; }
+.pv-timer { font-family: var(--f-mono); font-size: 48px; font-weight: 600; text-align: right; line-height: 1; }
+.pv-timer small { display: block; font-size: 15px; color: #8a8a8a; margin-top: 6px; }
+.presenter main { flex: 1; padding: 26px 40px; font-size: 29px; line-height: 1.6; max-width: 1100px; }
+.presenter main p { margin: 0 0 18px; }
+.presenter main p.cue { border-right: 5px solid var(--yellow); padding-right: 16px; }
+.presenter main p.cue b { color: var(--yellow); margin-left: 8px; }
+.pv-wait { color: var(--yellow); }
+.presenter footer { display: flex; align-items: center; justify-content: space-between; padding: 18px 32px; border-top: 1px solid #2a2a2a; font-size: 20px; }
+.pv-btns { display: flex; gap: 10px; }
+.pv-btns button { font-family: var(--f-display); font-size: 18px; font-weight: 700; padding: 10px 20px; border-radius: 999px; border: 2px solid #555; background: transparent; color: #fff; cursor: pointer; }
+.pv-btns button.pri { background: var(--orange); border-color: var(--orange); }
+
+.s10 .big { font-size: 330px; }
